@@ -4,18 +4,32 @@ html
     title HL7 Russia
     meta name="keywords" content="hl7 russia"
     meta name="author" content="HealthSamurai Team"
+    = csrf_meta_tag
+
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag 'application'
 
   body
     #header
       h1 HL7 Russia
 
-    #flash
       .notice
         == flash[:notice]
 
       .alert
         == flash[:alert]
 
+      .user
+        - if current_user
+          div
+            | Hello, #{current_user.email}!&nbsp;
+            - if current_user.admin?
+              = link_to "[admin panel]", admin_root_path, 'data-no-turbolink' => true
+            == "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            = link_to "Logout", destroy_user_session_path, method: :delete
+
+        - else
+          = link_to "Sign in", new_user_session_path
 
     #content
       == yield
