@@ -1,1 +1,9 @@
 p Index page
+
+h2
+  = t ".last_story"
+
+h4
+  = @last_story.title
+
+= simple_format @last_story.body

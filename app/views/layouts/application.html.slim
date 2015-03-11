@@ -11,7 +11,13 @@ html
 
   body
     #header
-      h1 HL7 Russia
+      h1
+        = t :site_title
+      p
+        = link_to "RU", root_path(locale: nil)
+        = "|"
+        = link_to "EN", root_path(locale: :en)
+
 
       .notice
         == flash[:notice]
@@ -33,3 +39,6 @@ html
 
     #content
       == yield
+
+    #footer
+      | &copy; 2015 HealthSamurai
