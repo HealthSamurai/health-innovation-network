@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title HL7 Russia
+    meta name="keywords" content="hl7 russia"
+    meta name="author" content="HealthSamurai Team"
+
+  body
+    #header
+      h1 HL7 Russia
+
+    #flash
+      .notice
+        == flash[:notice]
+
+      .alert
+        == flash[:alert]
+
+
+    #content
+      == yield
