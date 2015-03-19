@@ -1,9 +1,12 @@
-p Index page
+p = t(".index_page")
 
 h2
   = t ".last_story"
 
-h4
-  = @last_story.title
+- if @last_story
+  h4
+    = @last_story.title
 
-= simple_format @last_story.body
+  = simple_format @last_story.body
+- else
+  p = t(".empty")

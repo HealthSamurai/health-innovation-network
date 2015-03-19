@@ -4,3 +4,5 @@ en:
   index:
     index:
       last_story: Breaking news
+      index_page: Index page
+      empty: There are no stories.
