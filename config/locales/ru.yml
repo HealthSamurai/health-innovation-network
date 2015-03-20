@@ -1,5 +1,8 @@
 ru:
-  site_title: ХэЛэ Сэвэн Россия
+  site_title: HL7 Россия
+  site_stitle: Российский Филиал HL7 International
+  sign_in: Войти
+  sign_out: Выйти
 
   index:
     index:

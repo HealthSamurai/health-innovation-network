@@ -1,5 +1,8 @@
 en:
   site_title: HL7 Russia
+  site_stitle: Russian Department of HL7 International
+  sign_in: Sign In
+  sign_out: Sign Out
 
   index:
     index:

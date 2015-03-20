@@ -1,12 +1,96 @@
-p = t(".index_page")
+/! Slider
+#carousel-example-generic.carousel.slide data-ride="carousel" 
+  /! Indicators
+  ol.carousel-indicators
+    li.active data-slide-to="0" data-target="#carousel-example-generic" 
+    li data-slide-to="0" data-target="#carousel-example-generic" 
+    li data-slide-to="0" data-target="#carousel-example-generic" 
+  /! Wrapper for slides
+  .carousel-inner role="listbox" 
+    .item.active
+      img
+      	= link_to image_tag("slide1.png")
+      .carousel-caption
+        h3 Адаптация и разработка HL7 стандартов
+        p Обучение и сертификация Российских специалистов по основным группам стандартов HL7.
+    .item
+      img
+      	= link_to image_tag("slide2.png")
+      .carousel-caption
+        h3 Обучение и сертификация
+        p Обучение и сертификация Российских специалистов по основным группам стандартов HL7.
+    .item
+      img
+      	= link_to image_tag("slide3.png")
+      .carousel-caption
+        h3 Аудит и консультирование по применению HL7
+        p Обучение и сертификация Российских специалистов по основным группам стандартов HL7.
 
-h2
-  = t ".last_story"
+/! Slider END
+.container-fluid.allcontent
+  .texture
+  .container
+    .col-md-9.mycontent
+      
+      /! About HL7
+      h3 HL7 Россия
+      p Российский филиал HL7 International был создан летом 2009 года на базе РНИИ им. Н.И. Пирогова.
+      br/
+      
+      blockquote
+        p HL7 International - это международная, некоммерческая организация, занимающаяся разработкой комплексной платформы и соответсвующих стандартов для обмена, интеграции, совместному использованию и поиску электронной медицинской информации в клинической практике, управлении, предоставлении и оценке медицинских услуг.
+        p Основная цель HL7 - стандартизация обмена данными между медицинскими компьютерными приложениями, при которой исключается или значительно снижается необходимость в разработке и реализации специфичных программных интерфейсов.
+        a href="http://www.hl7.org/"  Подробнее об HL7 International.
+      br/
+      
+      h5 Деятельность HL7 Россия
+      ul
+        li
+          a href=""  Адаптация и разработка стандартов HL7 в России.
+        li
+          a href=""  Участие в разработке национальных стандартов в сфере медицинских информационных технологий.
+        li
+          a href=""  Обучение и сертификация специалистов по основным группам стандартов HL7.
+        li
+          a href=""  Аудит и консультирование по применению стандартов HL7.
+      hr/
+      
+      /! Membership
+      h3 Членство в HL7 Россия
+      p Любое физическое или юридическое лицо, заинтересованное в стандартизации обмена информацией и организации взаимодействия между медицинскими информационными системами,  приглашается к активному участию в работе Российского Филиала HL7.
+      br/
+      
+      h5 Зачем становиться членом HL7 Россия
+      ul
+        li Доступ и возможность использования закрытых документов HL7 International (на английском языке).
+        li Доступ и возможность использования закрытых документов HL7 Россия (переведенные стандарты, дополнения).
+        li Возможность участвовать в работе Наблюдательного Совета и обладать правом голоса.
+        li Участие в мероприятиях организованных HL7 Россия и HL7 International со скидкой или без оплаты регистрационного взноса.
+      a href=""  Подробнее о членстве в HL7 Россия.
+    
+    .col-md-3.news
+      h6 МЕРОПРИЯТИЯ
+      blockquote
+        a href="http://www.hl7.org/events/wgm052015/?ref=banner" target="_blank" 
+          strong 10-15 марта 2015
+          br/
+          | International: Заседание рабочих групп в Париже.
+      
+      hr/
+      h6 НОВОСТИ
+      blockquote
+        a href=""  Компания ООО "Нетрика" получила статус постоянного члена HL7 Россия.
 
-- if @last_story
-  h4
-    = @last_story.title
+/ .container
+/ 	p = t(".index_page")
 
-  = simple_format @last_story.body
-- else
-  p = t(".empty")
+/ 	h2
+/ 	  = t ".last_story"
+
+/ 	- if @last_story
+/ 	  h4
+/ 	    = @last_story.title
+
+/ 	  = simple_format @last_story.body
+/ 	- else
+/ 	  p = t(".empty")
