@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.1' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#specify-ruby-version-in-app>, <https://devcenter.heroku.com/articles/ruby-versions#selecting-a-version-of-ruby>
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -48,4 +49,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems>
 end
