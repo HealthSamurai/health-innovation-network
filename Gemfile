@@ -34,10 +34,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'activeadmin', github: 'activeadmin'
-gem 'slim'
-gem 'paperclip'
 gem 'devise'
+gem 'paperclip'
 gem 'rails-i18n'
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
