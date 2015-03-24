@@ -4,8 +4,6 @@ ruby '2.2.1' #heroku specific <https://devcenter.heroku.com/articles/getting-sta
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '~> 5.0'
@@ -41,6 +39,9 @@ gem 'rails-i18n'
 gem 'slim'
 
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -52,6 +53,8 @@ group :development, :test do
 end
 
 group :production do
+  # Use postgresql as the database for Active Record
   gem 'pg'
+
   gem 'rails_12factor' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems>
 end
