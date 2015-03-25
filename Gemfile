@@ -52,6 +52,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'heroku', group: :development
+
 group :production do
   # Use postgresql as the database for Active Record
   gem 'pg'
