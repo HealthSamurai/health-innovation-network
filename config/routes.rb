@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/pages/events', to: 'pages#events' 
   get '/pages/posts', to: 'pages#posts'
   get '/pages/contacts', to: 'pages#contacts' 
+  get '/pages/:action', to: 'pages'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
