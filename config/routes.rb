@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :stories
 
+  get '/pages/about', to: 'pages#about'
   get '/pages/membership', to: 'pages#membership' 
+  get '/pages/standards', to: 'pages#standards'
+  get '/pages/education', to: 'pages#education'
+  get '/pages/events', to: 'pages#events' 
+  get '/pages/posts', to: 'pages#posts'
+  get '/pages/contacts', to: 'pages#contacts' 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

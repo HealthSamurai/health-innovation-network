@@ -8,6 +8,7 @@ html
 
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'custom'
 
   body
     #header
@@ -62,13 +63,22 @@ html
       .naviga
         .container
           ul.list-inline
-            li: a.active href="/"  Главная
-            li: a href="/"  Членство
-            li: a href="/"  Стандарты
-            li: a href="/"  Обучение
-            li: a href="/"  Календарь
-            li: a href="/"  Новости
-            li: a href="/"  Контакты
+            li
+              = link_to "Главная", root_path
+            li
+              = link_to "HL7 Россия", pages_about_path
+            li
+              = link_to "Членство", pages_membership_path
+            li
+              = link_to "Стандарты", pages_standards_path
+            li
+              = link_to "Обучение", pages_education_path
+            li
+              = link_to "Мероприятия", pages_events_path
+            li
+              = link_to "Новости", pages_posts_path
+            li
+              = link_to "Контакты", pages_contacts_path
 
       / .notice
       /   == flash[:notice]
