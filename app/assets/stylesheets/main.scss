@@ -2,6 +2,10 @@ body {
   color: #444;
 }
 
+.row{
+  margin-left: 0px;
+}
+
 .navbar {
   background-color: #f5f5f5;
   border: 1px solid #eee;
@@ -27,6 +31,9 @@ a.navbar-brand {
 
 @media (max-width: 768px) {
   a.navbar-brand .brand-name small {
+    display: none;
+  }
+  #carousel-example-generic{
     display: none;
   }
 }
@@ -71,6 +78,11 @@ ul.list-inline {
 .carousel-inner > .item > a > img{
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.carousel-inner .carousel-caption{
+  text-align: right;
+  padding-bottom: 150px;
 }
 
 .allcontent {
@@ -120,4 +132,13 @@ footer {
   background-color: #f1f1f1;
   padding: 15px 0px;
   color: #aaa;
+}
+
+.activity{
+  margin-left: -15px;
+  
+  p {
+    margin-top: 10px;
+    max-width: 350px;
+  }
 }
