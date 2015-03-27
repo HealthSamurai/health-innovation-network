@@ -42,6 +42,9 @@ a.navbar-brand {
   #carousel-example-generic{
     display: none;
   }
+  .texture{
+    display: none;
+  }
 }
 
 button.btn {
@@ -154,7 +157,7 @@ footer {
 
 .activity{
   margin-left: -15px;
-  
+  margin-top: 15px;
   p {
     margin-top: 10px;
     max-width: 350px;
@@ -162,7 +165,7 @@ footer {
 }
 
 /* About */
-.about{
+.page-content{
   margin-top: 40px;
   border-right: 1px solid #ddd;
   margin-bottom: 40px;
