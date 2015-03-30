@@ -1,9 +1,89 @@
 .container
 	.col-md-9.page-content
-		h3 Стандарты HL7 Россия
-		ul 
-			li HL7 2.3.1
-			li CDA R2-2005
-			li FHIR-ru
+		h3 Введение в HL7 стандарты
+		p HL7 и ее участники занимаются разработкой стандартов для электронного обмена, интеграции и распространения медицинской информации.
+		p Эти стандарты определяют как информация должна быть упакована и передана от одной стороны к другой, в том числе определяют: "язык", структуру и типы данных необходимые для интеграции между системами.
+		p Стандарты HL7 поддерживают как клинические, так и управленческие процессы предоставление и оценки медицинских услуг. HL7 Стандарты признаны по всему миру.
 		br/
-		h4 Инструкция по доступу к стандартам HL7 International
+		h6 ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+		ul.list-unstyled
+		  li
+		    = link_to "Подробно о стандартах на сайте HL7 International", pages_education_path
+		hr/
+		br/
+		h4 Основные группы HL7 стандартов
+		br/
+		.row.activity
+			.col-md-3
+				a.img-responsive href="http://hl7.org/implement/standards/FHIR-Develop/index.html" = image_tag("test.jpg", class: "img-responsive")
+			.col-md-9
+				strong 
+					a href="http://hl7.org/implement/standards/FHIR-Develop/index.html" target="_blank" HL7 FHIR
+				p FHIR – это стандарт нового поколения от международной организации HL7. FHIR совмещает в себе лучшие свойства стандартов и спецификаций второго (HL7 v2) и третьего (HL7 v3) поколения, Архитектуры клинического документа (CDA®) и производных продуктов. FHIR ориентирован на веб-технологии и  практическую реализуемость.
+				br/
+				h6 ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+				ul.list-unstyled
+				  li
+				    a href="http://hl7.org/implement/standards/FHIR-Develop/index.html" target="_blank" Официальная документация (на английском)
+				  li
+				    a href="http://fhir-ru.github.io/" target="_blank" Официальная документация (на русском)
+				  li
+				    = link_to "Тренинги и семинары по FHIR в России", pages_education_path
+		hr/
+		.row.activity
+			.col-md-3
+				a.img-responsive href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7" = image_tag("test.jpg", class: "img-responsive")
+			.col-md-9
+				strong 
+					a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7" target="_blank" CDA Release 2
+				p CDA (Clinical Document Architecture) - стандарт специфицирует структуру и семантику "клинических документов" для электронного обмена между лечебными учреждениями и пациентами.
+				br/
+				h6 ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+				ul.list-unstyled
+				  li
+				    a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7" target="_blank" Официальная документация
+				  li
+				    = link_to "Перевод на русский CDA R2-2005 (скачать)", pages_standards_path
+		hr/
+		.row.activity
+			.col-md-3
+				a.img-responsive href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=186" = image_tag("test.jpg", class: "img-responsive")
+			.col-md-9
+				strong 
+					a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=186" target="_blank" HL7 version 3
+				p HL7 v3 - группа стандартов разрабатываемых по "model-driven methodology" и ориентированных на обмен сообщениями и электронными документами в формате XML. Группа стандартов  построеных на базе RIM (Reference Information Model).
+				br/
+				h6 ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+				ul.list-unstyled
+				  li
+				    a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=186" target="_blank" Официальная документация
+		hr/
+		.row.activity
+			.col-md-3
+				a.img-responsive href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=185" = image_tag("test.jpg", class: "img-responsive")
+			.col-md-9
+				strong 
+					a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=185" target="_blank" HL7 version 2
+				p HL7 v2 - это самый первый стандарт обмена электронными сообщениями между медицинскими информационными системами созданный организацией HL7 и получивший широкое практическое применение в US.
+				br/
+				h6 ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+				ul.list-unstyled
+				  li
+				    a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=185" target="_blank" Официальная документация
+				  li
+				    = link_to "Перевод на русский HL7 2.3.1 (скачать)", pages_standards_path
+		hr/
+		br/
+		h4 Доступ к стандартам HL7 International/Russia
+		p Для доступа к стандартам HL7 (и их скачивания) Вам или Вашей компании необходимо быть членом HL7. Вы можете стать членом HL7 Россия и получить доступ ко всем стандартам английском языке и имеющимся переводам на русский.
+		br/
+		h6 ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
+		ul.list-unstyled
+		  li
+		    = link_to "Как стать участником?", pages_membership_path
+		  li
+		    = link_to "Подать заявку", pages_membership_path
+		  li
+		    = link_to "Кто уже входит в HL7 Россия?", pages_membership_path
+
+
