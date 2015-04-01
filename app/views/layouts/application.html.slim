@@ -49,8 +49,7 @@ html
               - else
                 li
                   form.navbar-form.navbar-left role="signin" 
-                    button.btn.btn-default type="submit"
-                      = link_to t("sign_in"), new_user_session_path
+                    = link_to t("sign_in"), new_user_session_path, :class => "btn btn-default"
 
               li
                 = link_to "RU", root_path(locale: nil)
