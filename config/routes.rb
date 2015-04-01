@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :stories
 
   get '/pages/about', to: 'pages#about'
-  get '/pages/membership', to: 'pages#membership'
   get '/pages/workgroups', to: 'pages#workgroups' 
   get '/pages/standards', to: 'pages#standards'
   get '/pages/education', to: 'pages#education'
