@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require jquery.nav
 //= require_tree .
-
-@import 'jquery.nav'
