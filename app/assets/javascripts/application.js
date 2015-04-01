@@ -16,4 +16,4 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-@import 'jquery.nav.js'
+@import 'jquery.nav'
