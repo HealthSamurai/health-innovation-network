@@ -26,7 +26,7 @@ html
               span.icon-bar
             a.navbar-brand href="/"
               /span.brand-name
-              i.icon.ion-ios-pricetags
+              = image_tag "logo.png"
               | HIN
           #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
@@ -54,7 +54,7 @@ html
                   = link_to t("sign_in"), new_user_session_path
       .notice== flash[:notice]
 
-      .alert== flash[:alert]
+      .alerts== flash[:alert]
     #content== yield
     footer
       .container
