@@ -37,10 +37,12 @@ gem 'devise'
 gem 'paperclip'
 gem 'rails-i18n'
 gem 'slim'
+# Use postgresql as the database for Active Record
+gem 'pg'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  #gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -55,8 +57,6 @@ end
 gem 'heroku', group: :development
 
 group :production do
-  # Use postgresql as the database for Active Record
-  gem 'pg'
 
   gem 'rails_12factor' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems>
 end
