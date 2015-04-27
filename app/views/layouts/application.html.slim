@@ -1,8 +1,8 @@
 doctype html
 html
   head
-    title HL7 Russia
-    meta name="keywords" content="hl7 russia"
+    title Health Innovation Network
+    meta name="keywords" content="hin"
     meta name="author" content="HealthSamurai Team"
     = csrf_meta_tag
 
@@ -23,46 +23,36 @@ html
               span.icon-bar
             a.navbar-brand href="/"
               span.brand-name
-                = t :site_title
-                = " | "
-                small
-                  = t :site_stitle
-          /! Collect the nav links, forms, and other content for toggling
+                | Health Innovation Network |
+                small "???"
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
-
               - if current_user
-                - if current_user.admin?
-                  li.dropdown
-                    a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
-                      | #{current_user.email} &nbsp;
-                      span.caret
-                    ul.dropdown-menu role="menu"
+                li.dropdown
+                  a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
+                    | #{current_user.email} &nbsp;
+                    span.caret
+                  ul.dropdown-menu role="menu"
+                    li
+                      a href="#" role="menuitem"
+                        = link_to "Profile", profile_path, 'data-no-turbolink' => true
+                    - if current_user.admin?
                       li
                         a href="#" role="menuitem"
-                          = link_to "Админка", admin_root_path, 'data-no-turbolink' => true
-                      li.divider
-                      li
-                        a href="#" role="menuitem"
-                          = link_to t("sign_out"), destroy_user_session_path, method: :delete
+                          = link_to "Administer", admin_root_path, 'data-no-turbolink' => true
+                    li.divider
+                    li
+                      a href="#" role="menuitem"
+                        = link_to t("sign_out"), destroy_user_session_path, method: :delete
 
               - else
                 li
                   form.navbar-form.navbar-left role="signin"
                     = link_to t("sign_in"), new_user_session_path, :class => "btn btn-default"
+      .notice== flash[:notice]
 
-              li
-                = link_to "RU", root_path(locale: nil)
-
-              li
-                = link_to "EN", root_path(locale: :en)
-      .notice
-        == flash[:notice]
-
-      .alert
-        == flash[:alert]
-    #content
-      == yield
+      .alert== flash[:alert]
+    #content== yield
     footer
       .container.footerlinks
         .col-md-4
@@ -74,42 +64,17 @@ html
           h6 ???
           ul.list-unstyled
             li
-              a href=""  HL7 Internation
+              a href=""  ???
         .col-md-4
           h6 Contacts
           ul.list-unstyled
-            li АНО ЗУС "Евразия"
-            li
-              a href="mailto:hl7russia@gmail.com"  hl7russia@gmail.com
+            li ?
+            li: a href="mailto:???"  ???
       .container-fluid.footeradd
         .container
           .col-md-8
             ul.list-inline
-              li АНО ЗУС "Евразия". Все права защищены. 2015.
+              li ???
           .col-md-4
-            | Сайт разработан
+            | Powered by
             a href="http://health-samurai.io" target="_blank"  Health Samurai Team
-    /! Footer END
-
-  javascript:
-    $('#nav').onePageNav({
-        currentClass: 'current',
-        changeHash: false,
-        scrollSpeed: 750,
-        scrollThreshold: 0.5,
-        filter: '',
-        easing: 'swing',
-        begin: function() {
-            //I get fired when the animation is starting
-        },
-        end: function() {
-            //I get fired when the animation is ending
-        },
-        scrollChange: function($currentListItem) {
-            //I get fired when you enter a section and I pass the list item of the section
-        }
-    });
-
-    $('#nav').onePageNav({
-        filter: ':not(.external)'
-    });

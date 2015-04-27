@@ -4,13 +4,9 @@ Rails.application.routes.draw do
   resources :stories
 
   get '/pages/about', to: 'pages#about'
-  get '/pages/workgroups', to: 'pages#workgroups'
-  get '/pages/standards', to: 'pages#standards'
-  get '/pages/education', to: 'pages#education'
-  get '/pages/events', to: 'pages#events'
-  get '/pages/posts', to: 'pages#posts'
-  get '/pages/contacts', to: 'pages#contacts'
   get '/pages/:action', to: 'pages'
+
+  resource :profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

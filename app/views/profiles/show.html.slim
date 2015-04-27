@@ -1,0 +1,5 @@
+.container
+  = form_for current_user, url: profile_path do |f|
+    h3 Update Profile
+    = f.text_field :email
+    = f.submit

@@ -8,25 +8,17 @@
   /! Wrapper for slides
   .carousel-inner role="listbox"
     .item.active
-      img
-      	= link_to image_tag("")
+      img= link_to image_tag("")
       .carousel-caption
-        h3 Адаптация и разработка стандартов обмена
-        p Разработка, адаптация стандартов и руководств силами рабочих групп HL7 Россия.
+        h3 ???
+        p ???
     .item
-      img
-      	= link_to image_tag("")
+      img= link_to image_tag("")
       .carousel-caption
-        h3 Обучение и сертификация специалистов
-        p Обучение специалитов по основным группам стандартов HL7.
-    .item
-      img
-      	= link_to image_tag("")
-      .carousel-caption
-        h3 Рабочие группы HL7 Россия
-        p Решение практических задач, разработка предложений стандартов и руководств силами рабочих групп.
+        h3 ???
+        p ???
 
 /! Slider END
-.container-fluid.allcontent
+.container
   .container
-    h3 =link_to 'Registration', new_user_registration_path
+    h3 =link_to 'Registration', new_user_registration_path, {class: 'btn btn-success'}

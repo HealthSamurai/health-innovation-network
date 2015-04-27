@@ -42,4 +42,4 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 end
 
-Rails.application.routes.default_url_options[:host] = '172.17.0.11:3000'
+Rails.application.routes.default_url_options[:host] = ENV['HOST']
