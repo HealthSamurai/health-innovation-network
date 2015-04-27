@@ -31,10 +31,10 @@ html
           #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
               - if current_user
-                = image_tag current_user.avatar.url(:thumb), class: 'avatar'
                 li.dropdown
                   a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
-                    | #{current_user.email} &nbsp;
+                    = image_tag current_user.avatar.url(:thumb), class: 'avatar'
+                    | &nbsp; #{current_user.name || current_user.email} &nbsp;
                     span.caret
                   ul.dropdown-menu role="menu"
                     li
@@ -52,9 +52,10 @@ html
               - else
                 li
                   = link_to t("sign_in"), new_user_session_path
-      .notice== flash[:notice]
-
-      .alert== flash[:alert]
+      - if flash[:notice]
+        .alert.alert-success: .container== flash[:notice]
+      - if flash[:alert]
+        .alert.alert-danger: .container== flash[:alert]
     #content== yield
     footer
       .container
