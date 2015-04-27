@@ -1,5 +1,14 @@
 .container
   = form_for current_user, url: profile_path do |f|
     h3 Update Profile
-    = f.text_field :email
+    .form-group
+      = f.label :name
+      = f.text_field :name
+      = f.check_box :name_is_public
+    .form-group
+      = image_tag current_user.avatar.url(:thumb)
+    .form-group
+      = f.label :avatar
+      = f.file_field :avatar
+      = f.check_box :avatar_is_public
     = f.submit
