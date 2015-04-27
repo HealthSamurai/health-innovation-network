@@ -16,6 +16,10 @@
 !/log/.keep
 /tmp
 
-.DS_Store
+*#
+*.#*
 *sw?
-public/system
+*~
+.DS_Store
+/config/database.yml
+/public/system

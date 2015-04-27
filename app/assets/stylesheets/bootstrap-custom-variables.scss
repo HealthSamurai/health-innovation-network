@@ -1,0 +1,35 @@
+// Bootstrap variables
+// Fonts
+$font-size-base:                   16px;
+$font-family-sans-serif:           "Gotham Pro", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
+$line-height-base:                 1.5;
+
+// Colors
+$body-bg:                          #fff !default;
+
+$black:                            #202020;
+$gray-base:                        #717171;
+$gray-darker:                      #808080;
+$gray-dark:                        #9c9c9c;
+$gray:                             #d8d8d8;
+$gray-light:                       #f0f0f0;
+$gray-lighter:                     #fafafa;
+
+$brand-success:                    #00c69a;
+
+$btn-default-bg:                   #1b1b1b;
+$btn-default-border:               #1b1b1b;
+$btn-default-color:                $body-bg;
+
+// Navbar
+$navbar-height:                    96px;
+$navbar-border-radius:             0;
+$navbar-default-color:             $brand-success;
+$navbar-default-link-color:        $brand-success;
+$navbar-default-bg:                $body-bg;
+
+$border-radius-base:               0px;
+$border-radius-large:              0px;
+$border-radius-small:              0px;
+
+$btn-success-border:               $brand-success;
