@@ -15,5 +15,4 @@ class ApplicationController < ActionController::Base
   def current_admin_user
     current_user && current_user.admin? && current_user
   end
-
 end
