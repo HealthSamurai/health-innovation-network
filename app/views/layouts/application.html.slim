@@ -8,6 +8,7 @@ html
 
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
 
   body
     #header
@@ -28,7 +29,7 @@ html
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
               - if current_user
-                = image_tag current_user.avatar.url(:thumb)
+                = image_tag current_user.avatar.url(:thumb), class: 'avatar'
                 li.dropdown
                   a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
                     | #{current_user.email} &nbsp;

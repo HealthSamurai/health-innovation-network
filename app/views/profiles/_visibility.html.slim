@@ -1,0 +1,8 @@
+.form-group
+  .input-group
+    = yield
+    .input-group-addon.visibility
+      = f.check_box attr
+      = f.label attr, title: 'Visible to everyone' do
+        i.fa.fa-eye
+        i.fa.fa-eye-slash
