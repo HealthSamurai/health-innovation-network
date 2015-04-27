@@ -10,13 +10,25 @@
   letter-spacing: 0.13em;
 }
 
+.btn-lg {
+  line-height: 3.0;
+  text-transform: uppercase;
+}
+
 
 
 
 
 // Header
+.navbar {
+  border-bottom: none;
+}
 .navbar-default .navbar-brand {
   color: $gray;
+  > img {
+    display:  inline-block;
+    margin-right: 10px;
+  }
 }
 
 #navbar {
@@ -26,24 +38,35 @@
 }
 
 
+.row-content.gray {
+  background: $gray-light;
+}
 
 
 
 // Moto
+.join-us {
+  width: 15em;
+}
+
 .moto {
-  height: 24em;
   padding-top: 1em;
   padding-bottom: 3em;
-
-  > .heading {
-    letter-spacing: -0.014em;
+  
+  > a > img {
     margin-bottom: 1em;
   }
 
-  > .btn {
-    line-height: 3.0;
-    width: 15em;
+  > .heading {
+    color: $gray-dark;
+    letter-spacing: -0.014em;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+    > span {
+      color: $gray-darker
+    }
   }
+
 }
 
 
@@ -52,12 +75,92 @@
 
 // Faces
 .faces {
-  h2 {
+  padding: 4em 0;
+  color: $black;
+
+  > h2 {
+    margin-top: 0;
     font-size: 24px !important;
     font-weight: bold !important;
-    color: $gray;
+    margin-bottom: 1.5em;
+  }
+
+  > p {
+    margin-bottom: 1.5em;
+  }
+
+  > .avatars > img + img {
+    margin-left: 2em;
+  }
+  
+}
+
+
+
+
+// News
+
+.news {
+  padding: 4em 0;
+  color: $black;
+
+  p, time {
+    color: $gray-base;
+    font-size: 0.9em;
+  }
+
+  h3 {
+    font-size: 1.4em; // 21px
+    margin-top: 0;
+  }
+
+  > h2 {
+    margin-bottom: 1.5em;
+  }
+
+  .join-us {
+    margin-top: 4em;
+  }
+
+  > .cards-row {
+    margin-bottom: 2em;
+
+    > div:first-child {
+      padding-left: 0;
+    }
+    > div:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .card {
+    border-radius: 2px;
+    background: $gray-lighter;
+    padding: 2em;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+    border: 1px inset rgba(255, 255, 255, 0.2);
+  }
+
+  .col-md-6 > .card {
+    padding-left: 6em;
+
+    > h3 {
+      position: relative;
+    }
+
+    > h3::before {
+      content: "";
+      width: 32px;
+      height: 22px;
+      background: asset-data-url("icon-newspaper.png") no-repeat;
+      position: absolute;
+      left: -2.5em;
+      top: -2px;
+    }
   }
 }
+
+
 
 
 // Content
