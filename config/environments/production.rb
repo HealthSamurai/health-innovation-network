@@ -80,6 +80,7 @@ Rails.application.configure do
   # Mandrill mail <https://devcenter.heroku.com/articles/mandrill>.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: ENV['HIN_DOMAIN'] } #<http://stackoverflow.com/questions/4114835/heroku-devise-missing-host-to-link-to-please-provide-host-parameter-or-set-d#4114864>
   config.action_mailer.smtp_settings = {
     address: 'smtp.mandrillapp.com',
     port: 587,
