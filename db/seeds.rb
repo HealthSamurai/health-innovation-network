@@ -6,10 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-email = 'admin@hl7.ru'
+email = 'healthinnovationnetwork2@gmail.com'
 password = 'password'
 unless User.find_by_email(email)
-  User.create!(email: email, password: password, admin: true)
+  User
+    .create!(email: email, password: password, admin: true)
+    .confirm!
 end
 
 unless MemberType.count < 1
