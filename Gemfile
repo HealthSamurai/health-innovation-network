@@ -59,5 +59,6 @@ end
 
 group :production do
   gem 'aws-sdk', '< 2.0' #aws version 2 is not compatible with paperclip <https://github.com/thoughtbot/paperclip/issues/1764>
+  gem 'puma' #<https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server>
   gem 'rails_12factor' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems>
 end
