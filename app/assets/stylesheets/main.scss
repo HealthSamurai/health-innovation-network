@@ -54,7 +54,7 @@
 
 .moto {
   padding-top: 1em;
-  padding-bottom: 6em;
+  margin-bottom: 6em;
 
   > a > img {
     margin-bottom: 1em;
@@ -76,7 +76,9 @@
 
 // Faces
 .faces {
-  background: $black;
+  // background: $gray-light;
+  background: transparent;
+  margin-bottom: 6em;
 }
 
 
