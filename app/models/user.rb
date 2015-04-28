@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   has_and_belongs_to_many :member_types
-  has_and_belongs_to_many :member_interests
+  has_and_belongs_to_many :interest_areas
+  has_and_belongs_to_many :engagement_interests
+  belongs_to :company_category
 
   def self.states
     {

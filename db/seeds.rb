@@ -12,10 +12,46 @@ unless User.find_by_email(email)
   User.create!(email: email, password: password, admin: true)
 end
 
-unless MemberType.count < 1
+if MemberType.count < 1
   MemberType.create!(title: 'Advisor')
 end
 
-unless MemberInterest.count < 1
-  MemberInterest.create!(title: 'Innovation')
+if EngagementInterest.count < 1
+  [ "Piloting/Clinical Testing",
+    "Innovation",
+    "Business Development",
+    "Technical Development",
+    "Advising/Mentoring",
+    "Funding",
+    "Product/Service Provider"
+  ].each do |title|
+    EngagementInterest.create(title: title)
+  end
+end
+
+if InterestArea.count < 1
+  [
+    "Digital Health, Remote Monitoring, Connected Health",
+    "Lifestyle and Wellness, Prevention",
+    "Care Navigation",
+    "Behavioral and Mental Health",
+    "Medication Management",
+    "Social Engagement, Patient Engagement",
+    "Population Management",
+    "Chronic Disease Management ",
+    "EMR, Health IT",
+    "Analytics, Artificial Intelligence, Machine Learning",
+    "Palliative care, End of Life Care",
+    "Patient Safety, Infection Prevention",
+    "Scheduling, Revenue Management, Practice Management",
+    "Diagnostics"
+  ].each do |title|
+    InterestArea.create(title: title)
+  end
+end
+
+if CompanyCategory.count < 1
+  ["Hospital"].each do |title|
+    CompanyCategory.create(title: title)
+  end
 end

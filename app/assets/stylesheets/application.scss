@@ -68,7 +68,16 @@
       display: none;
     }
   }
+    h3 {
+      margin: 10px 0;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
   .form-control {
-    height: 40px;
+  }
+  .form-actions {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
   }
 }

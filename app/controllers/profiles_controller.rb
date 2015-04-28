@@ -4,12 +4,23 @@ class ProfilesController < ApplicationController
 
   def update
     user_attrs = params.require(:user).permit(
-      :email, :email_is_public,
-      :name, :name_is_public,
-      :city, :state,
+      :areas_willing_to,
       :avatar,
+      :city, :state,
+      :company_category_id,
+      :company_contact_person,
+      :company_is_accelerator,
+      :company_name,
+      :company_name_of_ace,
+      :company_site,
+      :email, :email_is_public,
+      :engagement_interest_other,
+      :interest_area_other,
+      :name, :name_is_public,
+      :phone,
       {member_type_ids: []},
-      {member_interest_ids: []}
+      {engagement_interest_ids: []},
+      {interest_area_ids: []}
     )
     current_user.attributes = user_attrs
     current_user.save!

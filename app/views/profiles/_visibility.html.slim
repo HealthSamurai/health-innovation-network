@@ -1,8 +1,4 @@
 .form-group
-  .input-group
+  = f.label attr, class: 'col-sm-3 control-label'
+  div.col-sm-9
     = yield
-    .input-group-addon.visibility
-      = f.check_box attr
-      = f.label attr, title: 'Visible to everyone' do
-        i.fa.fa-eye
-        i.fa.fa-eye-slash
