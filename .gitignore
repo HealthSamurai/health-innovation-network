@@ -21,5 +21,4 @@
 *sw?
 *~
 .DS_Store
-/config/database.yml
 /public/system

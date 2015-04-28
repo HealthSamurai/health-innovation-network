@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.1' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#specify-ruby-version-in-app>, <https://devcenter.heroku.com/articles/ruby-versions#selecting-a-version-of-ruby>
+ruby '2.2.2' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#specify-ruby-version-in-app>, <https://devcenter.heroku.com/articles/ruby-versions#selecting-a-version-of-ruby>
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,15 +37,11 @@ gem 'devise'
 gem 'paperclip'
 gem 'rails-i18n'
 gem 'slim'
-# Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg' #use postgresql as the database for Active Record
 gem 'jquery.fileupload-rails'
+gem 'awesome_print' #nice highlighting/indentation in rails console
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  #gem 'sqlite3'
-
-  gem 'mailcatcher'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -56,9 +52,13 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'heroku' 
+  gem 'mailcatcher'
+end
+
 gem 'heroku', group: :development
 
 group :production do
-
   gem 'rails_12factor' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems>
 end
