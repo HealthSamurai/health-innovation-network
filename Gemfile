@@ -57,8 +57,7 @@ group :development do
   gem 'mailcatcher'
 end
 
-gem 'heroku', group: :development
-
 group :production do
+  gem 'aws-sdk', '< 2.0' #aws version 2 is not compatible with paperclip <https://github.com/thoughtbot/paperclip/issues/1764>
   gem 'rails_12factor' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems>
 end

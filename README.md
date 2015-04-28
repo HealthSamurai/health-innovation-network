@@ -30,4 +30,3 @@ git push heroku master
 #### Seed
 
     heroku run rake db:seed
-

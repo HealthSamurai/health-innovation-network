@@ -54,8 +54,8 @@
 
 .moto {
   padding-top: 1em;
-  padding-bottom: 3em;
-  
+  padding-bottom: 6em;
+
   > a > img {
     margin-bottom: 1em;
   }
@@ -74,12 +74,24 @@
 
 
 
-
-
 // Faces
 .faces {
-  padding: 4em 0;
+  background: $black;
+}
+
+
+
+// Description
+.description {
+  padding: 4em 0 2em 0;
   color: $black;
+
+  > div.col-md-6:first-of-type {
+    padding-left: 0;
+  }
+  > div.col-md-6:last-of-type {
+    padding-right: 0;
+  }
 
   > h2 {
     margin-top: 0;
@@ -88,14 +100,11 @@
     margin-bottom: 1.5em;
   }
 
-  > p {
+  p {
     margin-bottom: 1.5em;
+    font-size: 1.1em; // 18px
+    line-height: 1.7em; // 21px
   }
-
-  > .avatars > img + img {
-    margin-left: 2em;
-  }
-  
 }
 
 
