@@ -40,7 +40,6 @@ gem 'slim'
 gem 'pg' #use postgresql as the database for Active Record
 gem 'jquery.fileupload-rails'
 gem 'awesome_print' #nice highlighting/indentation in rails console
-gem 'aws-sdk', '< 2.0' #aws version 2 is not compatible with paperclip <https://github.com/thoughtbot/paperclip/issues/1764>
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,8 +57,7 @@ group :development do
   gem 'mailcatcher'
 end
 
-gem 'heroku', group: :development
-
 group :production do
+  gem 'aws-sdk', '< 2.0' #aws version 2 is not compatible with paperclip <https://github.com/thoughtbot/paperclip/issues/1764>
   gem 'rails_12factor' #heroku specific <https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems>
 end
