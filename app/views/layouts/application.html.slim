@@ -53,9 +53,9 @@ html
                 li
                   = link_to t("sign_in"), new_user_session_path
       - if flash[:notice]
-        .alert.alert-success: .container== flash[:notice]
+        .alert.alert-success style="margin:0": .container== flash[:notice]
       - if flash[:alert]
-        .alert.alert-danger: .container== flash[:alert]
+        .alert.alert-danger style="margin:0": .container== flash[:alert]
     #content== yield
     footer
       .container

@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_sign_in_path_for(resource)
+    profile_path
+  end
+
   def authenticate_admin_user!
     if current_admin_user
       true
