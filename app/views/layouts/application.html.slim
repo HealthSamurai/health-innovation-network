@@ -37,18 +37,11 @@ html
                     | &nbsp; #{current_user.name || current_user.email} &nbsp;
                     span.caret
                   ul.dropdown-menu role="menu"
-                    li
-                      a href="#" role="menuitem"
-                        = link_to "Profile", profile_path, 'data-no-turbolink' => true
+                    li= link_to "Profile", profile_path, role: 'menuitem', 'data-no-turbolink' => true
                     - if current_user.admin?
-                      li
-                        a href="#" role="menuitem"
-                          = link_to "Administer", admin_root_path, 'data-no-turbolink' => true
+                      li= link_to "Administer", admin_root_path, role: 'menuitem', 'data-no-turbolink' => true
                     li.divider
-                    li
-                      a href="#" role="menuitem"
-                        = link_to t("sign_out"), destroy_user_session_path, method: :delete
-
+                    li= link_to t("sign_out"), destroy_user_session_path, role: 'menuitem', method: :delete
               - else
                 li
                   = link_to t("sign_in"), new_user_session_path
