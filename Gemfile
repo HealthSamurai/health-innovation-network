@@ -40,7 +40,7 @@ gem 'slim'
 gem 'pg' #use postgresql as the database for Active Record
 gem 'jquery.fileupload-rails'
 gem 'awesome_print' #nice highlighting/indentation in rails console
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0' #aws version 2 is not compatible with paperclip <https://github.com/thoughtbot/paperclip/issues/1764>
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
