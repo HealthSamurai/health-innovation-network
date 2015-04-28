@@ -16,10 +16,19 @@ $gray-light:                       #f0f0f0;
 $gray-lighter:                     #fafafa;
 
 $brand-success:                    #00c69a;
+$brand-primary:                    #313131;
 
 $btn-default-bg:                   #1b1b1b;
 $btn-default-border:               #1b1b1b;
 $btn-default-color:                $body-bg;
+
+// Forms colors
+$input-bg:                       #fff !default;
+// $input-bg-disabled:              $gray-lighter !default;
+$input-bg-disabled:              #fbfbfb !default;
+$input-color:                    #999 !default;
+$input-border:                   #e0e0e0 !default;
+
 
 // Navbar
 $navbar-height:                    96px;
