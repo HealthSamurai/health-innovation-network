@@ -11,3 +11,11 @@ password = 'password'
 unless User.find_by_email(email)
   User.create!(email: email, password: password, admin: true)
 end
+
+unless MemberType.count < 1
+  MemberType.create!(title: 'Advisor')
+end
+
+unless MemberInterest.count < 1
+  MemberInterest.create!(title: 'Innovation')
+end

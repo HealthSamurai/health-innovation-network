@@ -2,36 +2,39 @@ doctype html
 html
   head
     title Health Innovation Network
+    meta name="charset" content="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width" name="viewport"
     meta name="keywords" content="hin"
     meta name="author" content="HealthSamurai Team"
     = csrf_meta_tag
 
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'
 
   body
     #header
       /! Primary Navbar
-      nav.navbar.navbar-default
+      nav.navbar.navbar-default role="navigation"
         .container
-
           .navbar-header
-            button.navbar-toggle.collapsed data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
+            button.navbar-toggle.collapsed data-target="#navbar" data-toggle="collapse" type="button"
               span.sr-only Toggle navigation
               span.icon-bar
               span.icon-bar
               span.icon-bar
             a.navbar-brand href="/"
-              span.brand-name
-                | Health Innovation Network |
-                small "???"
-          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              /span.brand-name
+              = image_tag "logo.png"
+              | HIN
+          #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
               - if current_user
-                = image_tag current_user.avatar.url(:thumb)
                 li.dropdown
                   a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
-                    | #{current_user.email} &nbsp;
+                    = image_tag current_user.avatar.url(:thumb), class: 'avatar'
+                    | &nbsp; #{current_user.name || current_user.email} &nbsp;
                     span.caret
                   ul.dropdown-menu role="menu"
                     li
@@ -48,34 +51,19 @@ html
 
               - else
                 li
-                  form.navbar-form.navbar-left role="signin"
-                    = link_to t("sign_in"), new_user_session_path, :class => "btn btn-default"
-      .notice== flash[:notice]
-
-      .alert== flash[:alert]
+                  = link_to t("sign_in"), new_user_session_path
+      - if flash[:notice]
+        .alert.alert-success: .container== flash[:notice]
+      - if flash[:alert]
+        .alert.alert-danger: .container== flash[:alert]
     #content== yield
     footer
-      .container.footerlinks
-        .col-md-4
-          h6 HIN
-          ul.list-unstyled
-            li
-              a href=""  Home
-        .col-md-4
-          h6 ???
-          ul.list-unstyled
-            li
-              a href=""  ???
-        .col-md-4
-          h6 Contacts
-          ul.list-unstyled
-            li ?
-            li: a href="mailto:???"  ???
-      .container-fluid.footeradd
-        .container
-          .col-md-8
-            ul.list-inline
-              li ???
-          .col-md-4
-            | Powered by
-            a href="http://health-samurai.io" target="_blank"  Health Samurai Team
+      .container
+        h4 © 2015 «HEALTHCARE INNOVATION NETWORK»
+        p
+          | All rights reserved.  10535 Wilshire Blvd. #1609
+          br/
+          | Los Angeles Ca 90024
+        /.col-md-4
+        /   | Powered by
+        /   a href="http://health-samurai.io" target="_blank"  Health Samurai Team

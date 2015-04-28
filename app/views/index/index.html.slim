@@ -1,24 +1,74 @@
-/! Slider
-#carousel-example-generic.carousel.slide data-ride="carousel"
-  /! Indicators
-  ol.carousel-indicators
-    li.active data-slide-to="0" data-target="#carousel-example-generic"
-    li data-slide-to="0" data-target="#carousel-example-generic"
-    li data-slide-to="0" data-target="#carousel-example-generic"
-  /! Wrapper for slides
-  .carousel-inner role="listbox"
-    .item.active
-      img= link_to image_tag("")
-      .carousel-caption
-        h3 ???
-        p ???
-    .item
-      img= link_to image_tag("")
-      .carousel-caption
-        h3 ???
-        p ???
-
-/! Slider END
-.container
+main
   .container
-    h3 =link_to 'Registration', new_user_registration_path, {class: 'btn btn-success'}
+    .row.moto.text-center
+      a href="/"
+        = image_tag "logo--large.png"
+      h1.heading
+        span
+          | HEALTHCARE
+        br>/
+        | INNOVATION
+        br>/
+        | NETWORK
+      = link_to "Join Us", new_user_registration_path, class: "btn btn-success btn-lg join-us"
+  .row-content.gray
+    .container.faces.text-center
+      h2 Healthcare Innovation Network
+      p
+        | The Healthcare Innovation Network is a collaborative forum and a
+        | marketplace  that forms a direct pipeline between 
+        br/
+        | providers and the
+        | innovators of solutions designed to reduce costs and improve the
+        | of care.
+      .avatars
+        = image_tag "face1.png", class: "img-circle"
+        = image_tag "face1.png", class: "img-circle"
+        = image_tag "face1.png", class: "img-circle"
+        = image_tag "face1.png", class: "img-circle"
+  .container.news
+    h2 HIN News
+    .row.cards-row
+      .col-md-6
+        .card
+          h3 HIN actual news
+          p
+            | The Healthcare Innovation Network is a collaborative forum and a
+            | marketplace  that forms a direct pipeline between providers and the
+            | innovators of solutions designed to reduce costs and improve the   of care.
+          time 12/09 4:09 PM
+      .col-md-6
+        .card
+          h3 HIN actual news
+          p
+            | The Healthcare Innovation Network is a collaborative forum and a
+            | marketplace  that forms a direct pipeline between providers and the
+            | innovators of solutions designed to reduce costs and improve the   of care.
+          time 12/09 4:09 PM
+    .row.cards-row
+      .col-md-4
+        .card
+          h3 HIN actual news
+          p
+            | The Healthcare Innovation Network is a collaborative forum and a
+            | marketplace  that forms a direct pipeline between providers and the
+            | innovators of solutions designed to reduce costs and improve the   of care.
+          time 12/09 4:09 PM
+      .col-md-4
+        .card
+          h3 HIN actual news
+          p
+            | The Healthcare Innovation Network is a collaborative forum and a
+            | marketplace  that forms a direct pipeline between providers and the
+            | innovators of solutions designed to reduce costs and improve the   of care.
+          time 12/09 4:09 PM
+      .col-md-4
+        .card
+          h3 HIN actual news
+          p
+            | The Healthcare Innovation Network is a collaborative forum and a
+            | marketplace  that forms a direct pipeline between providers and the
+            | innovators of solutions designed to reduce costs and improve the   of care.
+          time 12/09 4:09 PM
+    .row.text-center
+      = link_to "Join Us", new_user_registration_path, class: "btn btn-success btn-lg join-us"

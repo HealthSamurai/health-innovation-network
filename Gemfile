@@ -39,6 +39,7 @@ gem 'rails-i18n'
 gem 'slim'
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'jquery.fileupload-rails'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

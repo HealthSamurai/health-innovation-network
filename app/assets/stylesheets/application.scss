@@ -2,6 +2,73 @@
 @import "bootstrap-custom-variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 @import "fonts";
 @import "main";
 
+.avatar {
+  height: 40px;
+  border-radius: 100%;
+}
+
+.navbar-default {
+  margin: 0;
+}
+
+.hin {
+  background: #eee;
+  padding: 2em;
+  .hin-form {
+    margin: 0 auto;
+  }
+  .input-group-addon.visibility {
+    padding: 0;
+  }
+  label.check_box {
+    display: block;
+  }
+  .avatar {
+    input[type="file"] {
+      width: 1px;
+      height: 1px;
+      display: none;
+    }
+  }
+  #avatar-preview {
+    cursor: pointer;
+    height: 100px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: white;
+  }
+  .visibility {
+    input[type="checkbox"] {
+      display: none;
+    }
+    input[type="checkbox"] + label {
+      display: block;
+      cursor: pointer;
+      padding: 8px 15px 4px;
+      font-size: 20px;
+    }
+    input[type="checkbox"] + label .fa {
+      text-shadow: -1px -1px 1px white;
+    }
+    input[type="checkbox"] + label .fa-eye {
+      display: none;
+    }
+    input[type="checkbox"] + label .fa-eye-slash {
+      display: block;
+    }
+    input[type="checkbox"]:checked + label .fa-eye {
+      display: block;
+      color: black;
+    }
+    input[type="checkbox"]:checked + label .fa-eye-slash {
+      display: none;
+    }
+  }
+  .form-control {
+    height: 40px;
+  }
+}

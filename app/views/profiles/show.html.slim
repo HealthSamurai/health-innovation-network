@@ -1,14 +1,29 @@
-.container
+.hin: .hin-form.container
   = form_for current_user, url: profile_path do |f|
-    h3 Update Profile
-    .form-group
-      = f.label :name
-      = f.text_field :name
-      = f.check_box :name_is_public
-    .form-group
-      = image_tag current_user.avatar.url(:thumb)
-    .form-group
-      = f.label :avatar
-      = f.file_field :avatar
-      = f.check_box :avatar_is_public
-    = f.submit
+    .row
+      .col-md-12: h3 Profile
+    .row
+      .col-md-8
+        = render layout: 'visibility', locals: {f: f, attr: :name_is_public} do
+          = f.text_field :name, class: 'form-control', placeholder: 'Name'
+
+        = render layout: 'visibility', locals: {f: f, attr: :email_is_public} do
+          = f.email_field :email, class: 'form-control', placeholder: 'Email'
+
+        .form-group= f.select :state, User.states, {}, class: 'form-control', placeholder: 'State'
+        .form-group= f.text_field :city, class: 'form-control', placeholder: 'City'
+        br
+        h4 Member Type(s)
+        .form-group.members= f.collection_check_boxes(:member_type_ids, MemberType.all, :id, :title) do |b|
+          = b.label(class: "check_box", :"data-value" => b.value) { b.check_box(class: "check_box") + " " + b.text + " " }
+        br
+        h4 Interests
+        .form-group.members= f.collection_check_boxes(:member_interest_ids, MemberInterest.all, :id, :title) do |b|
+          = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
+      .col-md-4
+        .form-group
+          label.avatar
+            .images
+              = image_tag current_user.avatar.url(:thumb), id: 'avatar-preview'
+            = f.file_field :avatar, id: 'avatar'
+    .row: .col-md-12: .form-group = f.submit class: 'btn btn-success'
