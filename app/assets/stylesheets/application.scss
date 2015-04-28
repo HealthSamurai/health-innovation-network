@@ -27,7 +27,7 @@
   label.check_box {
     display: block;
   }
-  .avatar {
+  .images {
     input[type="file"] {
       width: 1px;
       height: 1px;
@@ -36,9 +36,9 @@
   }
   #avatar-preview {
     cursor: pointer;
-    height: 100px;
-    border: 1px solid #ddd;
-    padding: 10px;
+    height: 150px;
+    border-radius: 100%;
+    padding: 0px;
     background: white;
   }
   .visibility {
@@ -68,11 +68,17 @@
       display: none;
     }
   }
-    h3 {
-      margin: 10px 0;
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
+  h3 {
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  .field_with_errors {
+    .control-label, .form-control {
+      border-color: #ff4400;
+      color: #ff4400;
     }
+  }
   .form-control {
   }
   .form-actions {
@@ -82,11 +88,13 @@
   }
 }
 #error_explanation {
-  border: 1px solid darkred;
-  color: darkred;
-  margin: 10px 0;
+  border: 1px solid #ff4400;
+  color: #ff4400;
+  background: white;
+  margin: 10px -15px;
   h2 {
     font-size: 16px;
+    margin: 5px 0;
   }
-  padding: 10px;
+  padding: 20px 20px;
 }

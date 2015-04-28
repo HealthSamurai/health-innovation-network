@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428100330) do
+ActiveRecord::Schema.define(version: 20150428123822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,9 +103,6 @@ ActiveRecord::Schema.define(version: 20150428100330) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.boolean  "name_is_public",            default: false, null: false
-    t.boolean  "avatar_is_public",          default: false, null: false
-    t.boolean  "email_is_public",           default: false, null: false
     t.string   "position"
     t.boolean  "position_is_public",        default: false, null: false
     t.string   "avatar_file_name"
@@ -114,18 +111,19 @@ ActiveRecord::Schema.define(version: 20150428100330) do
     t.datetime "avatar_updated_at"
     t.string   "city"
     t.string   "state"
-    t.boolean  "company_is_accelerator"
-    t.integer  "company_category_id"
-    t.string   "areas_willing_to"
-    t.string   "company_contact_person"
-    t.string   "company_name"
-    t.string   "company_name_of_ace"
-    t.string   "company_position"
-    t.string   "company_site"
-    t.string   "linkedin"
     t.string   "phone"
+    t.string   "company_name"
+    t.string   "company_position"
+    t.integer  "company_category_id"
+    t.boolean  "company_is_accelerator"
+    t.string   "company_name_of_ace"
+    t.string   "company_site"
+    t.string   "company_contact_person"
+    t.string   "linkedin"
+    t.string   "areas_willing_to"
     t.string   "engagement_interest_other"
     t.string   "interest_area_other"
+    t.boolean  "is_public",                 default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -3,22 +3,22 @@
     .row
       .col-md-8
         h3 Personal Info
-        = render layout: 'visibility', locals: {f: f, attr: :name} do
+        = render layout: 'visibility', locals: {f: f, attr: :name, label: 'Name'} do
           = f.text_field :name, class: 'form-control', placeholder: 'Name'
 
-        = render layout: 'visibility', locals: {f: f, attr: :email} do
+        = render layout: 'visibility', locals: {f: f, attr: :email, label: 'Email'} do
           = f.email_field :email, class: 'form-control', placeholder: 'Email'
 
-        = render layout: 'visibility', locals: {f: f, attr: :phone} do
+        = render layout: 'visibility', locals: {f: f, attr: :phone, label: 'Phone'} do
           = f.phone_field :phone, class: 'form-control', placeholder: 'Phone'
 
-        = render layout: 'visibility', locals: {f: f, attr: :linkedin} do
+        = render layout: 'visibility', locals: {f: f, attr: :linkedin, label: 'LinkedIn'} do
           = f.text_field :linkedin, class: 'form-control', placeholder: 'LinkedIn'
 
-        = render layout: 'visibility', locals: {f: f, attr: :state} do
+        = render layout: 'visibility', locals: {f: f, attr: :state, label: 'State'} do
           = f.select :state, User.states, {include_blank: 'None'}, class: 'form-control', placeholder: 'State'
 
-        = render layout: 'visibility', locals: {f: f, attr: :city} do
+        = render layout: 'visibility', locals: {f: f, attr: :city, label: 'City'} do
           = f.text_field :city, class: 'form-control', placeholder: 'city'
 
         h3 Interests
@@ -34,7 +34,7 @@
             = f.collection_check_boxes(:interest_area_ids, InterestArea.all, :id, :title) do |b|
               = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
 
-        = render layout: 'visibility', locals: {f: f, attr: :interest_area_other} do
+        = render layout: 'visibility', locals: {f: f, attr: :interest_area_other, label: 'Other Areas'} do
           = f.text_area :interest_area_other, class: 'form-control', placeholder: 'Other Areas'
 
         .form-group.members
@@ -42,32 +42,42 @@
           div.col-sm-9
             = f.collection_check_boxes(:engagement_interest_ids, EngagementInterest.all, :id, :title) do |b|
               = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
-        = render layout: 'visibility', locals: {f: f, attr: :engagement_interest_other} do
+        = render layout: 'visibility', locals: {f: f, attr: :engagement_interest_other, label: 'Other Interests'} do
           = f.text_area :engagement_interest_other, class: 'form-control', placeholder: 'Other Engagement Interests'
 
-        = render layout: 'visibility', locals: {f: f, attr: :areas_willing_to} do
+        = render layout: 'visibility', locals: {f: f, attr: :areas_willing_to, label: 'Areas Willing To'} do
           = f.text_area :areas_willing_to, class: 'form-control', placeholder: 'Areas Willing To'
 
         h3 Work Information
-        = render layout: 'visibility', locals: {f: f, attr: :company_name} do
+        = render layout: 'visibility', locals: {f: f, attr: :company_name, label: 'Company'} do
           = f.text_field :company_name, class: 'form-control', placeholder: 'company_name'
-        = render layout: 'visibility', locals: {f: f, attr: :company_category_id} do
-          = f.label :company_is_accelerator, 'Is Accelerator' do
-            = f.check_box :company_is_accelerator
-        = render layout: 'visibility', locals: {f: f, attr: :company_site} do
-          = f.text_field :company_site, class: 'form-control', placeholder: 'Site'
-        = render layout: 'visibility', locals: {f: f, attr: :company_category_id} do
+        = render layout: 'visibility', locals: {f: f, attr: :company_category_id, label: 'Company Category'} do
           = f.select :company_category_id, CompanyCategory.all.map{|cc| [cc.title, cc.id]}, { include_blank: 'None'}, class: 'form-control', placeholder: 'Company Category'
-        = render layout: 'visibility', locals: {f: f, attr: :company_name_of_ace} do
+        = render layout: 'visibility', locals: {f: f, attr: :company_is_accelerator, label: '&nbsp;'.html_safe} do
+          label
+            = f.check_box :company_is_accelerator
+            | &nbsp; Are you Accelerator?
+        = render layout: 'visibility', locals: {f: f, attr: :company_site, label: 'Site'} do
+          = f.text_field :company_site, class: 'form-control', placeholder: 'Site'
+        = render layout: 'visibility', locals: {f: f, attr: :company_name_of_ace, label: 'Name Of Ace'} do
           = f.text_field :company_name_of_ace, class: 'form-control', placeholder: 'Name of Ace'
-        = render layout: 'visibility', locals: {f: f, attr: :company_contact_person} do
+        = render layout: 'visibility', locals: {f: f, attr: :company_contact_person, label: 'Contact'} do
           = f.text_field :company_contact_person, class: 'form-control', placeholder: 'Contact'
 
       .col-md-3.col-md-offset-1
-        .form-group
-          label.avatar
+        div
+          label
             .images
               = image_tag current_user.avatar.url(:thumb), id: 'avatar-preview'
-            = f.file_field :avatar, id: 'avatar'
+              = f.file_field :avatar, id: 'avatar'
+          br
+          div
+            = f.radio_button :is_public, true
+            | &nbsp;
+            = f.label :is_public, "Public", :value => "true"
+            | &nbsp; &nbsp;
+            = f.radio_button :is_public, false
+            | &nbsp;
+            = f.label :is_public, "Private", :value => "false"
     .row: .col-md-12: .form-group.form-actions
       = f.submit class: 'btn btn-success'
