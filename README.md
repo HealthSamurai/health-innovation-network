@@ -28,5 +28,9 @@ git push heroku master
     heroku run rake db:migrate
 
 #### Seed
-
+##### Development
+    bundle exec mailcatcher
+    bundle exec rake db:migrate
+    
+##### Production
     heroku run rake db:seed
