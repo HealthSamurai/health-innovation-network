@@ -117,8 +117,8 @@
 
 // Description
 .description {
-  padding: 4em 0 2em 0;
-  color: $black;
+  padding: 4em 6em 2em 6em;
+  color: $black-light;
 
   > div.col-md-6:first-of-type {
     padding-left: 0;
@@ -138,6 +138,21 @@
     margin-bottom: 1.5em;
     font-size: 1.1em; // 18px
     line-height: 1.7em; // 21px
+    font-weight: lighter;
+    text-align: justify;
+  }
+  
+  .right-column {
+    // padding-right: 6em !important;
+    p {
+      line-height: 1.2;
+    }
+  }
+
+  .description-intro {
+    font-size: 1.3em;
+    line-height: 1.4;
+    text-align: left;
   }
 }
 
