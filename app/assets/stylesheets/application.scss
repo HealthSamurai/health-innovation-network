@@ -16,7 +16,7 @@
 }
 
 .hin {
-  background: #eee;
+  background: $gray-light;
   padding: 2em;
   .hin-form {
     margin: 0 auto;
@@ -26,8 +26,12 @@
   }
   label.check_box {
     display: block;
+    font-weight: normal;
+    color: $black-light;
   }
   .images {
+    padding-top: 6em;
+
     input[type="file"] {
       width: 1px;
       height: 1px;
@@ -39,7 +43,7 @@
     height: 150px;
     border-radius: 100%;
     padding: 0px;
-    background: white;
+    background: transparent;
   }
   .visibility {
     input[type="checkbox"] {
@@ -69,9 +73,11 @@
     }
   }
   h3 {
-    margin: 10px 0;
-    border-bottom: 1px solid #ddd;
+    margin: 10px 0 30px;
+    border-bottom: 1px solid $gray-semilight;
     padding: 10px 0;
+    font-weight: lighter;
+    font-size: 1.75em;
   }
   .field_with_errors {
     .control-label, .form-control {
@@ -85,6 +91,10 @@
     margin-top: 20px;
     border-top: 1px solid #ddd;
     padding: 20px 0;
+  }
+  .control-label {
+    font-weight: lighter;
+    color: $gray-base;
   }
 }
 #error_explanation {
