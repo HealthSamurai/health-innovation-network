@@ -42,7 +42,7 @@
     background: white;
   }
   .visibility {
-    input[type="checkbox"] {
+      input[type="checkbox"] {
       display: none;
     }
     input[type="checkbox"] + label {
@@ -86,6 +86,21 @@
     border-top: 1px solid #ddd;
     padding: 20px 0;
   }
+  input, textarea {
+    color: #5a5a5a;
+  }
+  ::-webkit-input-placeholder {color:#e0e0e0;}
+  ::-moz-placeholder          {color:#e0e0e0;}
+  :-moz-placeholder           {color:#e0e0e0;}
+  :-ms-input-placeholder      {color:#e0e0e0;}
+  ::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.4s ease;}
+  ::-moz-placeholder                {opacity: 1; transition: opacity 0.4s ease;}
+  :-moz-placeholder                 {opacity: 1; transition: opacity 0.4s ease;}
+  :-ms-input-placeholder            {opacity: 1; transition: opacity 0.4s ease;}
+  :focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.4s ease;}
+  :focus::-moz-placeholder          {opacity: 0; transition: opacity 0.4s ease;}
+  :focus:-moz-placeholder           {opacity: 0; transition: opacity 0.4s ease;}
+  :focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.4s ease;}
 }
 #error_explanation {
   border: 1px solid #ff4400;
