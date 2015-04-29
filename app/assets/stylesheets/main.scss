@@ -161,12 +161,18 @@
 
 // News
 .news {
-  padding: 4em 0 3.1em;
-  color: $black;
+  padding: 3em 6em 3.5em 6em;
+  color: $black-light;
 
-  p, time {
+  p {
     color: $gray-base;
-    font-size: 0.9em;
+    font-size: 1em; // 14px
+    font-weight: lighter;
+  }
+  time {
+    color: $gray-base;
+    font-size: 0.9em; // 14px
+    font-weight: normal;
   }
 
   h2 {
@@ -177,8 +183,9 @@
   }
 
   h3 {
-    font-size: 1.4em; // 21px
+    font-size: 1.3em; // 21px
     margin-top: 0;
+    color: $brand-primary;
   }
 
   .join-us {
@@ -242,16 +249,18 @@
 
 footer {
   background: $gray-lighter;
-  // height: 11em;
-  padding: 4em 0;
+  padding: 2.5em 0 3.3em;
 
   h4 {
     font-size: 16px !important;
     color: #1b1b1b;
     font-weight: normal !important;
+    margin-bottom: 0.5em;
   }
 
   p {
     font-weight: lighter;
+    font-size: 0.8em;
+    padding-left: 1.4em;
   }
 }
