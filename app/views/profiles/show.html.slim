@@ -2,7 +2,7 @@
   = form_for current_user, url: profile_path, html:{ class: 'form-horizontal'} do |f|
     .row
       .col-md-8
-        h3 Personal Info
+        h3 Personal Information
         = render layout: 'visibility', locals: {f: f, attr: :name, label: 'Name'} do
           = f.text_field :name, class: 'form-control', placeholder: 'Name'
 
@@ -23,14 +23,14 @@
 
         h3 Interests
         .form-group.members
-          label.col-sm-3.control-label Member Type(s)
-          div.col-sm-9
+          label.col-md-5.control-label Member Type(s)
+          div.col-md-5
             = f.collection_check_boxes(:member_type_ids, MemberType.all, :id, :title) do |b|
               = b.label(class: "check_box", :"data-value" => b.value) { b.check_box(class: "check_box") + " " + b.text + " " }
 
         .form-group.members
-          label.col-sm-3.control-label Interest Areas
-          div.col-sm-9
+          label.col-md-5.control-label Interest Areas
+          div.col-md-7
             = f.collection_check_boxes(:interest_area_ids, InterestArea.all, :id, :title) do |b|
               = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
 
@@ -38,8 +38,8 @@
           = f.text_area :interest_area_other, class: 'form-control', placeholder: 'Other Areas'
 
         .form-group.members
-          label.col-sm-3.control-label Engagement Interests
-          div.col-sm-9
+          label.col-md-5.control-label Engagement Interests
+          div.col-md-7
             = f.collection_check_boxes(:engagement_interest_ids, EngagementInterest.all, :id, :title) do |b|
               = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
         = render layout: 'visibility', locals: {f: f, attr: :engagement_interest_other, label: 'Other Interests'} do
@@ -64,7 +64,7 @@
         = render layout: 'visibility', locals: {f: f, attr: :company_contact_person, label: 'Contact'} do
           = f.text_field :company_contact_person, class: 'form-control', placeholder: 'Contact'
 
-      .col-md-3.col-md-offset-1
+      .col-md-3
         div
           label
             .images
@@ -79,5 +79,5 @@
             = f.radio_button :is_public, false
             | &nbsp;
             = f.label :is_public, "Private", :value => "false"
-    .row: .col-md-12: .form-group.form-actions
+    .row: .col-md-7.col-md-offset-5: .form-group.form-actions
       = f.submit class: 'btn btn-success'
