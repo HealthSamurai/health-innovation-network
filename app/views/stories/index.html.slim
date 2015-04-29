@@ -1,0 +1,14 @@
+.container
+  h1
+    | Stories &nbsp;
+    a.btn.btn-success href=new_story_path New
+  - @stories.each do |story|
+    hr
+    h3
+      a href= story_path(story)
+        = image_tag story.user.avatar.url(:thumb), class: 'avatar'
+        | &nbsp;
+        = story.title
+        | &nbsp;
+        small= l(story.created_at, format: :short)
+    p= story.abstract

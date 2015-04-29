@@ -1,0 +1,14 @@
+= f.text_field :title, placeholder: 'Title', class: 'form-control'
+- unless  @story.errors[:title].empty?
+  span.errors= @story.errors[:title].join(", ")
+br
+= f.text_area :abstract, class: 'form-control', placeholder: 'abstract'
+- unless  @story.errors[:abstract].empty?
+  span.errors= @story.errors[:abstract].join(", ")
+
+br
+= f.text_area :body, class: 'form-control', style: 'min-height: 400px'
+- unless  @story.errors[:body].empty?
+  span.errors= @story.errors[:body].join(", ")
+.row: .col-md-12: .form-group.form-actions
+  = f.submit class: 'btn btn-success'

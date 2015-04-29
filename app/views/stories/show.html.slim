@@ -1,0 +1,12 @@
+.container
+  h3
+    = image_tag @story.user.avatar.url(:thumb), class: 'avatar'
+    | &nbsp;
+    = @story.title
+    | &nbsp;
+    - if current_user and (current_user == @story.user or current_user.admin?)
+      div.pull-right
+        =link_to 'Edit', edit_story_path(@story), class: 'btn btn-success'
+  div= markdown(@story.body)
+  hr
+  i= l(@story.created_at, format: :short)

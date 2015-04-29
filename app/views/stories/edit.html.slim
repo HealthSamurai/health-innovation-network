@@ -1,0 +1,4 @@
+.hin: .hin-form.container
+  = form_for @story, url: story_path(@story),
+    html:{ class: 'form-horizontal'} do |f|
+    = render partial: 'form', locals: {f: f}

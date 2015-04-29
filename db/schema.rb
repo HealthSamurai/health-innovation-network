@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428123822) do
+ActiveRecord::Schema.define(version: 20150429142619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,9 +79,38 @@ ActiveRecord::Schema.define(version: 20150428123822) do
   create_table "stories", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.boolean  "published",  default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "published",         default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "story_views_count"
+    t.string   "abstract"
+  end
+
+  create_table "story_attachments", force: :cascade do |t|
+    t.integer  "story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+  end
+
+  create_table "story_comments", force: :cascade do |t|
+    t.integer  "story_id"
+    t.integer  "user_id"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "story_stars", force: :cascade do |t|
+    t.integer  "story_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -111,16 +140,16 @@ ActiveRecord::Schema.define(version: 20150428123822) do
     t.datetime "avatar_updated_at"
     t.string   "city"
     t.string   "state"
-    t.boolean  "company_is_accelerator"
-    t.integer  "company_category_id"
-    t.string   "areas_willing_to"
-    t.string   "company_contact_person"
-    t.string   "company_name"
-    t.string   "company_name_of_ace"
-    t.string   "company_position"
-    t.string   "company_site"
-    t.string   "linkedin"
     t.string   "phone"
+    t.string   "company_name"
+    t.string   "company_position"
+    t.integer  "company_category_id"
+    t.boolean  "company_is_accelerator"
+    t.string   "company_name_of_ace"
+    t.string   "company_site"
+    t.string   "company_contact_person"
+    t.string   "linkedin"
+    t.string   "areas_willing_to"
     t.string   "engagement_interest_other"
     t.string   "interest_area_other"
     t.boolean  "is_public",                 default: false, null: false
