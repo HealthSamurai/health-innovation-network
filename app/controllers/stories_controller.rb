@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_filter :find_story, only: [:show, :edit, :update]
+  before_filter :is_permited?, only: [:update, :edit]
 
   def index
     @stories = Story.order('updated_at DESC').all
@@ -42,5 +43,11 @@ class StoriesController < ApplicationController
 
   def find_story
     @story = Story.find(params[:id])
+  end
+
+  def is_permited?
+    unless current_user and (current_user.admin or current_user == @story.user)
+      raise ActionController::RoutingError.new('Forbidden')
+    end
   end
 end

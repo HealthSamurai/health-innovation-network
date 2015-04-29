@@ -30,6 +30,7 @@ html
               | HIN
           #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right.profile
+              li: a href=stories_path News
               - if current_user
                 li.dropdown
                   a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
@@ -46,9 +47,9 @@ html
                 li.sign-in
                   = link_to t("sign_in"), new_user_session_path
       - if flash[:notice]
-        .alert.alert-success style="margin:0": .container== flash[:notice]
+        .animate-remove.alert.alert-success style="margin:0": .container== flash[:notice]
       - if flash[:alert]
-        .alert.alert-danger style="margin:0": .container== flash[:alert]
+        .animate-remove.alert.alert-danger style="margin:0": .container== flash[:alert]
     #content== yield
     footer
       .container

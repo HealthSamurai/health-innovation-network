@@ -11,6 +11,10 @@
   border-radius: 100%;
 }
 
+#content {
+  min-height: 800px;
+}
+
 .navbar-default {
   margin: 0;
 }
@@ -46,7 +50,7 @@
     background: transparent;
   }
   .visibility {
-      input[type="checkbox"] {
+    input[type="checkbox"] {
       display: none;
     }
     input[type="checkbox"] + label {
@@ -139,4 +143,27 @@
 select.form-control option {
   padding: 5px 10px;
   line-height: 30px;
+}
+.container.stories {
+  margin-top: 20px;
+  width: 700px;
+}
+.story {
+  padding: 33px 0 35px;
+  border-top: 1px solid #ddd;
+  a.link {
+    color: #468c54!important;
+  }
+  .story-abstract {
+    margin-bottom: 10px;
+  }
+}
+.story-title {
+  .avatar {
+    margin-right: 20px;
+  }
+  h2 {
+    font-weight: bold;
+    color: #333;
+  }
 }

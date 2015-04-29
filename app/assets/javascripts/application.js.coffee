@@ -17,10 +17,20 @@
 #= require jquery.nav
 #= require_tree .
 $ ->
+  setTimeout((-> $('.animate-remove').hide('slow')), 5000)
+
   $('#avatar').on 'change', (ev)->
     file = ev.target.files[0]
     return unless file
     reader = new FileReader()
     reader.onload =  (e)->
       $('#avatar-preview').attr('src', e.target.result)
+    reader.readAsDataURL(file)
+
+  $('#image-input').on 'change', (ev)->
+    file = ev.target.files[0]
+    return unless file
+    reader = new FileReader()
+    reader.onload =  (e)->
+      $('#story-image').attr('src', e.target.result)
     reader.readAsDataURL(file)

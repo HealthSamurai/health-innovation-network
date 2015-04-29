@@ -1,12 +1,18 @@
-.container
-  h3
-    = image_tag @story.user.avatar.url(:thumb), class: 'avatar'
-    | &nbsp;
-    = @story.title
-    | &nbsp;
-    - if current_user and (current_user == @story.user or current_user.admin?)
-      div.pull-right
-        =link_to 'Edit', edit_story_path(@story), class: 'btn btn-success'
+.container.stories
+  - if current_user and (current_user == @story.user or current_user.admin?)
+    div.pull-right
+      =link_to 'Edit', edit_story_path(@story), class: 'btn btn-success'
+  .story-title
+    = image_tag @story.user.avatar.url(:thumb), class: 'avatar', style: 'float: left; margin-right: 20px;'
+    = @story.user.name
+    br
+    strong= l(@story.created_at, format: :short)
+    h2= @story.title
+  - if @story.image_file_name
+    br
+    = image_tag @story.image.url(:large)
+    br
+    br
   div= markdown(@story.body)
   hr
   i= l(@story.created_at, format: :short)

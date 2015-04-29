@@ -1,14 +1,18 @@
-.container
-  h1
-    | Stories &nbsp;
-    a.btn.btn-success href=new_story_path New
+.container.stories
+  h2
+    | News &nbsp;
+    - if current_user
+      a.pull-right.btn.btn-success href=new_story_path New
   - @stories.each do |story|
-    hr
-    h3
-      a href= story_path(story)
-        = image_tag story.user.avatar.url(:thumb), class: 'avatar'
-        | &nbsp;
-        = story.title
-        | &nbsp;
-        small= l(story.created_at, format: :short)
-    p= story.abstract
+    .story
+      .story-title
+        = image_tag story.user.avatar.url(:thumb), class: 'avatar', style: 'float: left; margin-right: 20px;'
+        = story.user.name
+        br
+        strong= l(story.created_at, format: :short)
+        h2: a href=story_path(story) = story.title
+      - unless story.image_file_name.nil?
+        a.link href= story_path(story)
+          .pull-right= image_tag story.image.url(:thumb)
+      .story-abstract= story.abstract
+      a.link href= story_path(story) Continue reading
