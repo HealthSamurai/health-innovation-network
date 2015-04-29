@@ -29,7 +29,7 @@ html
               = image_tag "logo.png"
               | HIN
           #navbar.collapse.navbar-collapse
-            ul.nav.navbar-nav.navbar-right
+            ul.nav.navbar-nav.navbar-right.profile
               - if current_user
                 li.dropdown
                   a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
@@ -43,7 +43,7 @@ html
                     li.divider
                     li= link_to t("sign_out"), destroy_user_session_path, role: 'menuitem', method: :delete
               - else
-                li
+                li.sign-in
                   = link_to t("sign_in"), new_user_session_path
       - if flash[:notice]
         .alert.alert-success style="margin:0": .container== flash[:notice]
