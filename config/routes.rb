@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/pages/about', to: 'pages#about'
   get '/pages/:action', to: 'pages'
 
+  get '/request-for-solutions', to: 'solution_requests#new'
+  post '/request-for-solutions', to: 'solution_requests#create'
+
   resource :profile
 
   # The priority is based upon order of creation: first created -> highest priority.
