@@ -1,99 +1,99 @@
 // Fonts faces
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-regular.eot");
-  src: url("gotham-pro-regular.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-regular.otf") format("opentype"),
-  url("gotham-pro-regular.woff") format("woff"),
-  url("gotham-pro-regular.ttf") format("truetype");
+  src: asset-url("gotham-pro-regular.eot");
+  src: asset-url("gotham-pro-regular.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-regular.otf") format("opentype"),
+  asset-url("gotham-pro-regular.woff") format("woff"),
+  asset-url("gotham-pro-regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-regular.eot");
-  src: url("gotham-pro-regular.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-regular.otf") format("opentype"),
-  url("gotham-pro-regular.woff") format("woff"),
-  url("gotham-pro-regular.ttf") format("truetype");
+  src: asset-url("gotham-pro-regular.eot");
+  src: asset-url("gotham-pro-regular.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-regular.otf") format("opentype"),
+  asset-url("gotham-pro-regular.woff") format("woff"),
+  asset-url("gotham-pro-regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-regular.eot");
-  src: url("gotham-pro-regular.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-regular.otf") format("opentype"),
-  url("gotham-pro-regular.woff") format("woff"),
-  url("gotham-pro-regular.ttf") format("truetype");
+  src: asset-url("gotham-pro-regular.eot");
+  src: asset-url("gotham-pro-regular.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-regular.otf") format("opentype"),
+  asset-url("gotham-pro-regular.woff") format("woff"),
+  asset-url("gotham-pro-regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-light.eot");
-  src: url("gotham-pro-light.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-light.otf") format("opentype"),
-  url("gotham-pro-light.woff") format("woff"),
-  url("gotham-pro-light.ttf") format("truetype");
+  src: asset-url("gotham-pro-light.eot");
+  src: asset-url("gotham-pro-light.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-light.otf") format("opentype"),
+  asset-url("gotham-pro-light.woff") format("woff"),
+  asset-url("gotham-pro-light.ttf") format("truetype");
   font-style: normal;
   font-weight: 100;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-light.eot");
-  src: url("gotham-pro-light.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-light.otf") format("opentype"),
-  url("gotham-pro-light.woff") format("woff"),
-  url("gotham-pro-light.ttf") format("truetype");
+  src: asset-url("gotham-pro-light.eot");
+  src: asset-url("gotham-pro-light.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-light.otf") format("opentype"),
+  asset-url("gotham-pro-light.woff") format("woff"),
+  asset-url("gotham-pro-light.ttf") format("truetype");
   font-style: normal;
   font-weight: 200;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-light.eot");
-  src: url("gotham-pro-light.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-light.otf") format("opentype"),
-  url("gotham-pro-light.woff") format("woff"),
-  url("gotham-pro-light.ttf") format("truetype");
+  src: asset-url("gotham-pro-light.eot");
+  src: asset-url("gotham-pro-light.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-light.otf") format("opentype"),
+  asset-url("gotham-pro-light.woff") format("woff"),
+  asset-url("gotham-pro-light.ttf") format("truetype");
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-medium.eot");
-  src: url("gotham-pro-medium.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-medium.otf") format("opentype"),
-  url("gotham-pro-medium.woff") format("woff"),
-  url("gotham-pro-medium.ttf") format("truetype");
+  src: asset-url("gotham-pro-medium.eot");
+  src: asset-url("gotham-pro-medium.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-medium.otf") format("opentype"),
+  asset-url("gotham-pro-medium.woff") format("woff"),
+  asset-url("gotham-pro-medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-medium.eot");
-  src: url("gotham-pro-medium.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-medium.otf") format("opentype"),
-  url("gotham-pro-medium.woff") format("woff"),
-  url("gotham-pro-medium.ttf") format("truetype");
+  src: asset-url("gotham-pro-medium.eot");
+  src: asset-url("gotham-pro-medium.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-medium.otf") format("opentype"),
+  asset-url("gotham-pro-medium.woff") format("woff"),
+  asset-url("gotham-pro-medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 800;
 }
 
 @font-face {
   font-family: "Gotham Pro";
-  src: url("gotham-pro-medium.eot");
-  src: url("gotham-pro-medium.eot?#iefix")format("embedded-opentype"),
-  url("gotham-pro-medium.otf") format("opentype"),
-  url("gotham-pro-medium.woff") format("woff"),
-  url("gotham-pro-medium.ttf") format("truetype");
+  src: asset-url("gotham-pro-medium.eot");
+  src: asset-url("gotham-pro-medium.eot?#iefix") format("embedded-opentype"),
+  asset-url("gotham-pro-medium.otf") format("opentype"),
+  asset-url("gotham-pro-medium.woff") format("woff"),
+  asset-url("gotham-pro-medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 900;
 }
