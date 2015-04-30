@@ -112,9 +112,10 @@
   }
   input[type="checkbox"]::before{
       content: '';
+      cursor: pointer;
       visibility: visible;
       display: block;
-      background: url("/assets/checkbox.png") 0 -14px no-repeat;
+      background: asset-url("checkbox.png") 0 -14px no-repeat;
       height: 14px;
       width: 14px;
   }
