@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430102014) do
+ActiveRecord::Schema.define(version: 20150430134137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,16 +92,6 @@ ActiveRecord::Schema.define(version: 20150430102014) do
     t.datetime "image_updated_at"
   end
 
-  create_table "story_attachments", force: :cascade do |t|
-    t.integer  "story_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "attachment_file_name"
-    t.string   "attachment_content_type"
-    t.integer  "attachment_file_size"
-    t.datetime "attachment_updated_at"
-  end
-
   create_table "story_comments", force: :cascade do |t|
     t.integer  "story_id"
     t.integer  "user_id"
@@ -144,16 +134,16 @@ ActiveRecord::Schema.define(version: 20150430102014) do
     t.datetime "avatar_updated_at"
     t.string   "city"
     t.string   "state"
-    t.string   "phone"
-    t.string   "company_name"
-    t.string   "company_position"
-    t.integer  "company_category_id"
     t.boolean  "company_is_accelerator"
-    t.string   "company_ace_name"
-    t.string   "company_ace_url"
-    t.string   "company_ace_contact"
-    t.string   "linkedin"
+    t.integer  "company_category_id"
     t.string   "areas_willing_to"
+    t.string   "company_ace_contact"
+    t.string   "company_name"
+    t.string   "company_ace_name"
+    t.string   "company_position"
+    t.string   "company_ace_url"
+    t.string   "linkedin"
+    t.string   "phone"
     t.string   "engagement_interest_other"
     t.string   "interest_area_other"
     t.boolean  "is_public",                 default: false, null: false
