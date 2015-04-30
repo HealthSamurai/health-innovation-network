@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :stories, path: 'news'
 
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
   get '/pages/:action', to: 'pages'
 
   get '/request-for-solutions', to: 'solution_requests#new'
