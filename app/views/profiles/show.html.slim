@@ -67,9 +67,10 @@
         = render layout: 'visibility', locals: {f: f, attr: :company_name, label: 'Position'} do
           = f.text_field :position, class: 'form-control', placeholder: 'Position'
         = render layout: 'visibility', locals: {f: f, attr: :company_is_accelerator, label: '&nbsp;'.html_safe} do
-          label
-            = f.check_box :company_is_accelerator
-            | &nbsp; Are you currently affiliated with an Incubator/Accelerator?
+          .checkbox
+            label.check_box
+              = f.check_box :company_is_accelerator
+              | Are you currently affiliated with an Incubator/Accelerator?
         = render layout: 'visibility', locals: {f: f, attr: :company_ace_name, label: 'Accelerator Name'} do
           = f.text_field :company_ace_name, class: 'form-control', placeholder: 'Accelerator Name'
         = render layout: 'visibility', locals: {f: f, attr: :company_ace_url, label: 'Accelerator Site Url'} do
