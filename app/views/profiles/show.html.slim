@@ -2,12 +2,27 @@
   = form_for current_user, url: profile_path, html:{ class: 'form-horizontal'} do |f|
     .row
       .col-md-8
-        h3 Personal Information
-        = render layout: 'visibility', locals: {f: f, attr: :name, label: 'Name'} do
-          = f.text_field :name, class: 'form-control', placeholder: 'Name'
+        h3 HIN Account
+
+        - if current_user.errors.present?
+          #error_explanation
+            ul
+              - current_user.errors.full_messages.each do |msg|
+                li= msg
 
         = render layout: 'visibility', locals: {f: f, attr: :email, label: 'Email'} do
           = f.email_field :email, class: 'form-control', placeholder: 'Email'
+
+        = render layout: 'visibility', locals: {f: f, attr: :password, label: 'Password'} do
+          = f.password_field :password, class: 'form-control', placeholder: 'Password'
+
+        = render layout: 'visibility', locals: {f: f, attr: :password, label: 'Password Confirmation'} do
+          = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation'
+
+        h3 Personal Information
+
+        = render layout: 'visibility', locals: {f: f, attr: :name, label: 'Name'} do
+          = f.text_field :name, class: 'form-control', placeholder: 'Name'
 
         = render layout: 'visibility', locals: {f: f, attr: :phone, label: 'Phone'} do
           = f.phone_field :phone, class: 'form-control', placeholder: 'Phone'
@@ -20,6 +35,7 @@
 
         = render layout: 'visibility', locals: {f: f, attr: :city, label: 'City'} do
           = f.text_field :city, class: 'form-control', placeholder: 'City'
+
 
         h3 Interests
         .form-group.members
@@ -49,10 +65,10 @@
         = render layout: 'visibility', locals: {f: f, attr: :areas_willing_to, label: 'Areas Willing to Travel to'} do
           = f.text_area :areas_willing_to, class: 'form-control', placeholder: 'Areas Willing to Travel to'
 
-        = render layout: 'visibility', 
-          locals: {f: f, attr: :interest_number_one_issue, 
+        = render layout: 'visibility',
+          locals: {f: f, attr: :interest_number_one_issue,
           label: 'If I could get help from the Network, my number 1 issue/focus right now is'} do
-          = f.text_area :interest_number_one_issue, class: 'form-control', 
+          = f.text_area :interest_number_one_issue, class: 'form-control',
             rows: 3,
             placeholder: 'my number 1 issue/focus right now is'
 

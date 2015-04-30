@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_filter :ensure_signed
+
   def show
   end
 
@@ -22,12 +24,27 @@ class ProfilesController < ApplicationController
       :linkedin,
       :phone,
       :position,
+      :password, :password_confirmation,
       {member_type_ids: []},
       {engagement_interest_ids: []},
       {interest_area_ids: []}
     )
+    if user_attrs[:password].empty?
+      user_attrs.except!(:password, :password_confirmation)
+    end
     current_user.attributes = user_attrs
-    current_user.save!
-    redirect_to profile_path, flash: {notice: 'Updated'}
+    current_user.save
+
+    if current_user.errors.empty?
+      redirect_to profile_path, flash: {notice: 'Updated'}
+    else
+      render :show
+    end
+  end
+
+  protected
+
+  def ensure_signed
+    redirect_to root_path unless current_user
   end
 end
