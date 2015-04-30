@@ -9,6 +9,6 @@ class Story < ActiveRecord::Base
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
-  scope :for_landing, -> { sorted.limit(2) }
+  scope :for_landing, -> { sorted.limit(4) }
   scope :sorted, -> { order('created_at DESC') }
 end
