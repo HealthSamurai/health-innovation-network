@@ -115,12 +115,13 @@
       cursor: pointer;
       visibility: visible;
       display: block;
-      background: asset-url("checkbox.png") 0 -14px no-repeat;
+      background: asset-url("checkbox.png") no-repeat;
+      background-position: 0 -14px;
       height: 14px;
       width: 14px;
   }
   input[type="checkbox"]:checked::before{
-      background: url("/assets/checkbox.png") 0 0 no-repeat;
+      background-position: 0 0;
   }
 
   .sign-in-form{
