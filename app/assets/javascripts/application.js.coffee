@@ -15,7 +15,6 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require jquery.nav
-#= require_tree .
 $ ->
   setTimeout((-> $('.animate-remove').hide('slow')), 5000)
 
