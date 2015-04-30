@@ -1,14 +1,14 @@
-.hin: .hin-form.container style="width: 40em;"
+.hin: .hin-form.container.login-forms-group.row 
   = form_for resource,
     as: resource_name,
     url: confirmation_path(resource_name),
     html: { method: :post, class: 'form-horizontal'} do |f|
-    .form-group: h3 Resend confirmation instructions
-    = devise_error_messages!
-    .form-group
-      = f.label :email, {class: 'col-sm-3 control-label'}
-      div.col-sm-9
-        = f.email_field :email, autofocus: true, class: 'form-control'
-    .form-group.form-actions
-      = f.submit "Resend confirmation instructions", class: 'btn btn-success'
-      = render "users/shared/links"
+
+    .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-12
+      h3 Resend confirmation instructions
+      = devise_error_messages!
+      p
+        = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
+      p 
+        = f.submit "Resend confirmation instructions", class: 'btn btn-success btn-block'
+

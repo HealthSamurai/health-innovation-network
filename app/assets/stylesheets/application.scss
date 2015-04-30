@@ -5,7 +5,6 @@
 
 @import "fonts";
 @import "main";
-@import "request-for-solutions";
 
 .avatar {
   height: 40px;
@@ -124,11 +123,14 @@
   input[type="checkbox"]:checked::before{
       background-position: 0 0;
   }
+  .italic{
+      font-style: italic;
+  }
 
-  .sign-in-form{
+  .login-forms-group{
     h3{
       border: none;
-      text-align: center;
+      text-align: center;  
       margin-bottom: 0;
     }
     ::-webkit-input-placeholder { text-align: center; }
@@ -140,6 +142,7 @@
     .shared-links a{
       color: $gray-dark;
       display: inline-block;
+      margin-top: 10px;
     }
     .btn-sign-up-link{
       background: none;
@@ -181,10 +184,6 @@
 
 .navbar-nav > li > .dropdown-menu {
   width: 100%;
-}
-
-.navbar-nav > li > a {
-  line-height: 40px;
 }
 .dropdown-menu > li > a {
   padding: 10px 20px;
