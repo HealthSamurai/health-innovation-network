@@ -24,5 +24,8 @@ p
   a href="" target="_blank" markdown
 .row: .col-md-12: .form-group.form-actions
   = f.submit class: 'btn btn-success'
+  - if @story.id
+    | &nbsp;
+    =link_to 'Remove', story_path(@story), method: 'delete', class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
   | &nbsp;
   = link_to 'Cancel', stories_path()

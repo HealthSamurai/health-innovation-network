@@ -127,7 +127,7 @@
   .sign-in-form{
     h3{
       border: none;
-      text-align: center;  
+      text-align: center;
       margin-bottom: 0;
     }
     ::-webkit-input-placeholder { text-align: center; }
@@ -137,9 +137,7 @@
   }
   .form-actions{
     a {
-      color: $gray-dark;
       display: inline-block;
-      margin-top: 10px;
     }
     .btn-sign-up-link{
       background: none;

@@ -1,6 +1,8 @@
 .container.stories
   - if current_user and (current_user == @story.user or current_user.admin?)
     div.pull-right
+      =link_to 'Remove', story_path(@story), method: 'delete', class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
+      | &nbsp;
       =link_to 'Edit', edit_story_path(@story), class: 'btn btn-success'
   .story-title
     = image_tag @story.user.avatar.url(:thumb), class: 'avatar', style: 'float: left; margin-right: 20px;'
