@@ -78,7 +78,7 @@
         div
           label
             .images
-              = image_tag current_user.avatar.url(:thumb), id: 'avatar-preview'
+              = image_tag current_user.avatar.url(:medium), id: 'avatar-preview'
               = f.file_field :avatar, id: 'avatar'
           br
           div
