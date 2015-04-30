@@ -1,7 +1,7 @@
 class Story < ActiveRecord::Base
-  class StoryAttachment < ActiveRecord::Base
+  class Attachment < ActiveRecord::Base
   end
-  has_many :attachment, class_name: 'Story::StoryAttachment'
+  has_many :attachment, class_name: 'Story::Attachment'
   belongs_to :user
 
   validates :title, presence: true
