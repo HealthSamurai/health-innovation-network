@@ -29,13 +29,18 @@ class ProfilesController < ApplicationController
       {engagement_interest_ids: []},
       {interest_area_ids: []}
     )
-    if user_attrs[:password].empty?
+
+    password = user_attrs[:password]
+
+    unless password.present?
       user_attrs.except!(:password, :password_confirmation)
     end
+
     current_user.attributes = user_attrs
     current_user.save
 
     if current_user.errors.empty?
+      sign_in(current_user, :bypass => true) if password.present?
       redirect_to profile_path, flash: {notice: 'Updated'}
     else
       render :show
