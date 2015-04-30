@@ -3,7 +3,7 @@ class SolutionRequest
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :name, :email, :subject, :message
+  attr_accessor :name, :email, :phone, :request, :idea, :help, :executive
 
-  validates :name, :email, :subject, :message, :presence => true
+  validates :name, :email, :presence => true
 end

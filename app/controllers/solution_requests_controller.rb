@@ -19,7 +19,8 @@ class SolutionRequestsController < ApplicationController
 private
 
   def solution_request_params
-    params.require(:solution_request).permit(:name, :email, :subject, :message)
+    params.require(:solution_request)
+      .permit(:name, :email, :phone, :request, :idea, :help, :executive)
   end
 
 end

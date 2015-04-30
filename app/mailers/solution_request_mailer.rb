@@ -6,7 +6,7 @@ class SolutionRequestMailer < ActionMailer::Base
   def new_request(request)
     @request = request
 
-    mail from: request.email, subject: "Solution Request from #{request.email}"
+    mail from: request.email, subject: "Request for Solutions from #{request.email}"
   end
 
 end

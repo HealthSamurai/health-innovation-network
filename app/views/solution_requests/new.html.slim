@@ -1,23 +1,54 @@
-.container
-  h1 Send Us your request
+.container#request-for-solutions
+  .row
+    .col-md-10.col-md-offset-1
+      h1
+        |
+          Healthcare Innovation Network Innovation Challenges, Requests for
+          Solutions, Offers to Help
   = form_for @request, url: request_for_solutions_path, html:{ class: 'form-horizontal'} do |f|
     .row
-      .col-md-12
+      .col-md-10.col-md-offset-1
+        .form-group.required
+          = f.label :name, 'Your name, Title, Organization'
+          = f.text_area :name, rows: 5, class: 'form-control', placeholder: 'Name'
+        .form-group.required
+          = f.label :email, 'Your email'
+          = f.text_field :email, class: 'form-control', placeholder: 'Email'
         .form-group
-          = f.label :name, 'Name', class: 'col-md-5 control-label'
-          div.col-md-6
-            = f.text_field :name, class: 'form-control', placeholder: 'Name'
+          = f.label :phone, 'Your phone number'
+          = f.text_field :phone, class: 'form-control', placeholder: 'Phone'
         .form-group
-          = f.label :email, 'Email', class: 'col-md-5 control-label'
-          div.col-md-6
-            = f.text_field :email, class: 'form-control', placeholder: 'Email'
+          = f.label :request, 'Submit a Request for Solution'
+          p
+            |
+              Requests for solutions will be posted for the Network Members to
+              address (indicate if you want it to be anonymized). The more
+              specific you are, the better we will be able to match you with
+              the right solution
+          = f.text_area :request, rows: 5, class: 'form-control', placeholder: 'Submit a Request'
         .form-group
-          = f.label :subject, 'Subject', class: 'col-md-5 control-label'
-          div.col-md-6
-            = f.text_field :subject, class: 'form-control', placeholder: 'Subject'
+          = f.label :idea, 'Submit your Idea for an Innovation Challenge for the Network'
+          p
+            |
+              Ideas will be posted on the Network Portal for Members and
+              Non-Members to address. Winning ideas will be selected for the
+              Grand Challenge
+          = f.text_area :idea, rows: 5, class: 'form-control', placeholder: 'Your idea'
         .form-group
-          = f.label :message, 'Message', class: 'col-md-5 control-label'
-          div.col-md-6
-            = f.text_area :message, class: 'form-control', rows: 6, placeholder: 'Subject'
-    .row: .col-md-7.col-md-offset-5: .form-group.form-actions
+          = f.label :help, 'Anything you can help your fellow Network Members with?'
+          p
+            |
+              Willing to run a pilot? Offer feedback, advice or implementation
+              stories in specific areas? Connect with someone else who can
+              help?
+          = f.text_area :help, rows: 5, class: 'form-control', placeholder: 'Your help'
+        .form-group
+          = f.label :executive, 'Would you like to get involved with the the Network on the executive level?'
+          p
+            |
+              We are looking for members who want to be engaged with the
+              Network's steering committee or be leaders of a Workgroup (Special
+              Interest Group)
+          = f.text_area :executive, rows: 5, class: 'form-control', placeholder: 'Would you like to get involved'
+    .row: .col-md-10.col-md-offset-1: .form-group.form-actions
       = f.submit 'Send', class: 'btn btn-success'
