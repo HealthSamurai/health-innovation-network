@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
-  resources :stories
+  resources :stories, path: 'news'
 
   get '/pages/:action', to: 'pages'
+
+  get '/request-for-solutions', to: 'solution_requests#new'
+  post '/request-for-solutions', to: 'solution_requests#create'
 
   resource :profile
 

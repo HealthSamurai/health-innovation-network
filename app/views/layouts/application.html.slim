@@ -31,6 +31,7 @@ html
           #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right.profile
               li: a href=stories_path News
+              li: a href=request_for_solutions_path Request for Solutions
               - if current_user
                 li.dropdown
                   a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
@@ -51,6 +52,13 @@ html
       - if flash[:alert]
         .animate-remove.alert.alert-danger style="margin:0": .container== flash[:alert]
     #content== yield
+    javascript:
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-62478648-1', 'auto');
+      ga('send', 'pageview');
     footer
       .container
         h4 © 2015 «HEALTHCARE INNOVATION NETWORK»
@@ -58,6 +66,7 @@ html
           | All rights reserved.  10535 Wilshire Blvd. #1609
           br/
           | Los Angeles Ca 90024
-        /.col-md-4
-        /   | Powered by
-        /   a href="http://health-samurai.io" target="_blank"  Health Samurai Team
+          br/
+          div.pull-right
+            | &nbsp; Powered by
+            a href="http://health-samurai.io" target="_blank"  Health Samurai Team

@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
-  before_filter :find_story, only: [:show, :edit, :update]
-  before_filter :is_permited?, only: [:update, :edit]
+  before_filter :find_story, only: [:show, :edit, :update, :destroy]
+  before_filter :is_permited?, only: [:update, :edit, :destroy]
 
   def index
     @stories = Story.order('updated_at DESC').all
@@ -14,6 +14,11 @@ class StoriesController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @story.destroy
+    redirect_to stories_path, flash: {notice: 'Story was removed'}
   end
 
   def update

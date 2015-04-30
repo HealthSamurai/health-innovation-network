@@ -1,8 +1,10 @@
-p
-  | Welcome 
-  = @email
-  | !
-p
-  | You can confirm your account email through the link below:
-p
-  = link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+p Thanks for signing up with Healthcare Innovation Network!
+
+p Please click this link to verify your account:
+
+p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+| For future reference, you have signed up with your email #{@email}
+
+br
+
+a href="#{ENV["HOST"]}" Healthcare Innovation Network
