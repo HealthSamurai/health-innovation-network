@@ -25,14 +25,16 @@
         .form-group.members
           label.col-md-5.control-label Member Type(s)
           div.col-md-5
-            = f.collection_check_boxes(:member_type_ids, MemberType.all, :id, :title) do |b|
-              = b.label(class: "check_box", :"data-value" => b.value) { b.check_box(class: "check_box") + " " + b.text + " " }
+            .checkbox
+              = f.collection_check_boxes(:member_type_ids, MemberType.all, :id, :title) do |b|
+                = b.label(class: "check_box", :"data-value" => b.value) { b.check_box(class: "check_box") + " " + b.text + " " }
 
         .form-group.members
           label.col-md-5.control-label Interest Areas
           div.col-md-7
-            = f.collection_check_boxes(:interest_area_ids, InterestArea.all, :id, :title) do |b|
-              = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
+            .checkbox
+              = f.collection_check_boxes(:interest_area_ids, InterestArea.all, :id, :title) do |b|
+                = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
 
         = render layout: 'visibility', locals: {f: f, attr: :interest_area_other, label: 'Other Areas'} do
           = f.text_area :interest_area_other, class: 'form-control', placeholder: 'Other Areas'
@@ -40,8 +42,9 @@
         .form-group.members
           label.col-md-5.control-label Engagement Interests
           div.col-md-7
-            = f.collection_check_boxes(:engagement_interest_ids, EngagementInterest.all, :id, :title) do |b|
-              = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
+            .checkbox
+              = f.collection_check_boxes(:engagement_interest_ids, EngagementInterest.all, :id, :title) do |b|
+                = b.label(class: "check_box") { b.check_box(class: "check_box") + " " + b.text + " " }
         = render layout: 'visibility', locals: {f: f, attr: :engagement_interest_other, label: 'Other Interests'} do
           = f.text_area :engagement_interest_other, class: 'form-control', placeholder: 'Other Engagement Interests'
 
@@ -79,5 +82,8 @@
             = f.radio_button :is_public, false
             | &nbsp;
             = f.label :is_public, "Private", :value => "false"
-    .row: .col-md-7.col-md-offset-5: .form-group.form-actions
-      = f.submit class: 'btn btn-success'
+
+      .col-md-8
+        .form-group.form-actions
+          .col-md-6.col-md-offset-5
+            = f.submit class: 'btn btn-success btn-block'

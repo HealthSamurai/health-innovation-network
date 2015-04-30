@@ -136,7 +136,7 @@
     :-ms-input-placeholder      { text-align: center; }
   }
   .form-actions{
-    a {
+    .shared-links a{
       color: $gray-dark;
       display: inline-block;
       margin-top: 10px;
@@ -145,7 +145,6 @@
       background: none;
       color: $gray-dark;
       border: 1px solid $gray-dark;
-      width: 100%;
     }
     .btn-sign-up-link:hover{
       color: $gray-lighter;

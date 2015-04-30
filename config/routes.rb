@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :stories
 
-  get '/pages/about', to: 'pages#about'
   get '/pages/:action', to: 'pages'
 
   resource :profile
