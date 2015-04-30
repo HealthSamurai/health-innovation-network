@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429155404) do
+ActiveRecord::Schema.define(version: 20150430102014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,19 +144,20 @@ ActiveRecord::Schema.define(version: 20150429155404) do
     t.datetime "avatar_updated_at"
     t.string   "city"
     t.string   "state"
-    t.string   "phone"
-    t.string   "company_name"
-    t.string   "company_position"
-    t.integer  "company_category_id"
     t.boolean  "company_is_accelerator"
-    t.string   "company_name_of_ace"
-    t.string   "company_site"
-    t.string   "company_contact_person"
-    t.string   "linkedin"
+    t.integer  "company_category_id"
     t.string   "areas_willing_to"
+    t.string   "company_ace_contact"
+    t.string   "company_name"
+    t.string   "company_ace_name"
+    t.string   "company_position"
+    t.string   "company_ace_url"
+    t.string   "linkedin"
+    t.string   "phone"
     t.string   "engagement_interest_other"
     t.string   "interest_area_other"
     t.boolean  "is_public",                 default: false, null: false
+    t.string   "interest_number_one_issue"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
