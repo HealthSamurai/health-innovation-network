@@ -159,11 +159,11 @@
 
 
 // News
-.news {
+.news, #about, #contact {
   padding: 3em 6em 3.5em 6em;
   color: $black-light;
 
-  p {
+  p, ol {
     color: $gray-base;
     font-size: 1em; // 14px
     font-weight: lighter;
@@ -233,6 +233,37 @@
   }
 }
 
+
+// About
+#about {
+  h2 {
+    margin-bottom: 1em;
+  }
+  p {
+    margin-bottom: 2em;
+  }
+  .list-heading {
+    margin-top: 2.5em;
+    margin-bottom: 1.2em;
+  }
+
+  ol {
+    padding-left: 1.3em;
+  }
+}
+
+#contact {
+  h2 {
+    margin-bottom: 1em;
+  }
+  h4 {
+    font-size: 1.1em;
+    color: $gray-base;
+  }
+  p {
+    margin-bottom: 2em;
+  }
+}
 
 
 
