@@ -1,4 +1,9 @@
 en:
+
+  time:
+    formats:
+      landing_news: '%m/%d %I:%M %p'
+
   site_title: HIN
   site_stitle: Health Innovation Network
   sign_in: Sign In

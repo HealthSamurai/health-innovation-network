@@ -69,48 +69,14 @@ main
             impossible without cross silo collaboration, ability to effectively communicate
             your needs and be open to the ideas coming from outside.
   .container.news
-    h2 HIN News
-    .row.cards-row
-      .col-md-6
-        .card
-          h3 HIN actual news
-          p
-            | The Healthcare Innovation Network is a collaborative forum and a
-            | marketplace  that forms a direct pipeline between providers and the
-            | innovators of solutions designed to reduce costs and improve the   of care.
-          time 12/09 4:09 PM
-      .col-md-6
-        .card
-          h3 HIN actual news
-          p
-            | The Healthcare Innovation Network is a collaborative forum and a
-            | marketplace  that forms a direct pipeline between providers and the
-            | innovators of solutions designed to reduce costs and improve the   of care.
-          time 12/09 4:09 PM
-    .row.cards-row
-      .col-md-4
-        .card
-          h3 HIN actual news
-          p
-            | The Healthcare Innovation Network is a collaborative forum and a
-            | marketplace  that forms a direct pipeline between providers and the
-            | innovators of solutions designed to reduce costs and improve the   of care.
-          time 12/09 4:09 PM
-      .col-md-4
-        .card
-          h3 HIN actual news
-          p
-            | The Healthcare Innovation Network is a collaborative forum and a
-            | marketplace  that forms a direct pipeline between providers and the
-            | innovators of solutions designed to reduce costs and improve the   of care.
-          time 12/09 4:09 PM
-      .col-md-4
-        .card
-          h3 HIN actual news
-          p
-            | The Healthcare Innovation Network is a collaborative forum and a
-            | marketplace  that forms a direct pipeline between providers and the
-            | innovators of solutions designed to reduce costs and improve the   of care.
-          time 12/09 4:09 PM
+    - if @stories.size > 0
+      h2 HIN News
+      .row.cards-row
+        - @stories.each do |story|
+          .col-md-6
+            .card
+              h3= link_to story.title, story_path(story)
+              p= story.abstract
+              time= l(story.created_at, format: :landing_news)
     .row.text-center
       = link_to "Join Us", new_user_registration_path, class: "btn btn-success btn-lg join-us"
