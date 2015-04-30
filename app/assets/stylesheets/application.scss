@@ -131,6 +131,10 @@
 .navbar-nav > li > .dropdown-menu {
   width: 100%;
 }
+
+.navbar-nav > li > a {
+  line-height: 40px;
+}
 .dropdown-menu > li > a {
   padding: 10px 20px;
 }
