@@ -1,5 +1,5 @@
 class IndexController < ApplicationController
   def index
-    @last_story = Story.last
+    @stories = Story.for_landing
   end
 end

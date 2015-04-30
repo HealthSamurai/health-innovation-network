@@ -88,5 +88,5 @@ test:
 production:
   <<: *default
   database: hin_production
-  username: hin
-  password: <%= ENV['HIN_DATABASE_PASSWORD'] %>
+  username: <%= ENV['PGUSER'] || 'hin' %>
+  password: <%= ENV['HIN_DATABASE_PASSWORD'] || ENV['PGPASSWORD'] %>

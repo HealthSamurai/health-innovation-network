@@ -1,7 +1,4 @@
 class Story < ActiveRecord::Base
-  class StoryAttachment < ActiveRecord::Base
-  end
-  has_many :attachment, class_name: 'Story::StoryAttachment'
   belongs_to :user
 
   validates :title, presence: true
@@ -11,4 +8,7 @@ class Story < ActiveRecord::Base
     :styles => { :large => '700x700', :medium => "300x300>", :thumb => "100x100>" }
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+
+  scope :for_landing, -> { sorted.limit(4) }
+  scope :sorted, -> { order('created_at DESC') }
 end

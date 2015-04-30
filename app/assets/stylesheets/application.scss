@@ -103,10 +103,62 @@
     font-weight: lighter;
     color: $gray-base;
   }
-  ::-webkit-input-placeholder {color:#e0e0e0;}
-  ::-moz-placeholder          {color:#e0e0e0;}
-  :-moz-placeholder           {color:#e0e0e0;}
-  :-ms-input-placeholder      {color:#e0e0e0;}
+  input[type="checkbox"]{
+      visibility: hidden;
+  }
+  label.check_box,
+  input[type="checkbox"]+label{
+      cursor: pointer;
+  }
+  input[type="checkbox"]::before{
+      content: '';
+      cursor: pointer;
+      visibility: visible;
+      display: block;
+      background: asset-url("checkbox.png") no-repeat;
+      background-position: 0 -14px;
+      height: 14px;
+      width: 14px;
+  }
+  input[type="checkbox"]:checked::before{
+      background-position: 0 0;
+  }
+
+  .sign-in-form{
+    h3{
+      border: none;
+      text-align: center;  
+      margin-bottom: 0;
+    }
+    ::-webkit-input-placeholder { text-align: center; }
+    :-moz-placeholder           { text-align: center; }
+    ::-moz-placeholder          { text-align: center; }
+    :-ms-input-placeholder      { text-align: center; }
+  }
+  .form-actions{
+    a {
+      color: $gray-dark;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn-sign-up-link{
+      background: none;
+      color: $gray-dark;
+      border: 1px solid $gray-dark;
+      width: 100%;
+    }
+    .btn-sign-up-link:hover{
+      color: $gray-lighter;
+      background-color:$gray-dark;
+      border: 1px solid $gray-lighter;
+    }
+  }
+
+
+  ::-webkit-input-placeholder {color: $gray-semilight;}
+  ::-moz-placeholder          {color: $gray-semilight;}
+  :-moz-placeholder           {color: $gray-semilight;}
+  :-ms-input-placeholder      {color: $gray-semilight;}
   ::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.4s ease;}
   ::-moz-placeholder                {opacity: 1; transition: opacity 0.4s ease;}
   :-moz-placeholder                 {opacity: 1; transition: opacity 0.4s ease;}

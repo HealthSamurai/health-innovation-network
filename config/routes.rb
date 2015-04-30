@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
-  resources :stories
+  resources :stories, path: 'news'
 
   get '/pages/about', to: 'pages#about'
   get '/pages/:action', to: 'pages'
