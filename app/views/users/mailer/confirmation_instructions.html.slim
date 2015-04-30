@@ -3,9 +3,8 @@ p Thanks for signing up with Healthcare Innovation Network!
 p Please click this link to verify your account:
 
 p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+| For future reference, you have signed up with your email #{@email}
 
-p "For future reference, you have signed up with your email #{@email}"
+br
 
-p Healthcare Innovation Network
-
-a href=ENV[:host] hin
+a href="#{ENV["HOST"]}" Healthcare Innovation Network
