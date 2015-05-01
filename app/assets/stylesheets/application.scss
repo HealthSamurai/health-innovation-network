@@ -111,19 +111,19 @@
   input[type="checkbox"]+label{
       cursor: pointer;
   }
-  input[type="checkbox"]::before{
-      content: '';
-      cursor: pointer;
-      visibility: visible;
-      display: block;
-      background: asset-url("checkbox.png") no-repeat;
-      background-position: 0 -14px;
-      height: 14px;
-      width: 14px;
-  }
-  input[type="checkbox"]:checked::before{
-      background-position: 0 0;
-  }
+//input[type="checkbox"]::before{
+//    content: '';
+//    cursor: pointer;
+//    visibility: visible;
+//    display: block;
+//    background: asset-url("checkbox.png") no-repeat;
+//    background-position: 0 -14px;
+//    height: 14px;
+//    width: 14px;
+//}
+//input[type="checkbox"]:checked::before{
+//    background-position: 0 0;
+//}
   .italic{
       font-style: italic;
   }
