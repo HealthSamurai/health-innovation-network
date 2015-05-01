@@ -33,34 +33,32 @@ main
       h2 Healthcare Innovation Network
       p.description-intro
         |
-          The Healthcare Innovation Network is a collaborative forum and a 
-          marketplace that forms a direct pipeline between providers and the 
+          The Healthcare Innovation Network is a collaborative forum and a
+          marketplace that forms a direct pipeline between providers and the
           innovators of solutions designed to reduce costs and improve the care.
       p.description-intro
         |
-          We hold these truths to be self evident, that healthcare providers, 
-          innovators and patients are created equal and are endowed with powers 
+          We hold these truths to be self evident, that healthcare providers,
+          innovators and patients are created equal and are endowed with powers
           of curiosity and creativity in pursuit of happiness and better healthcare.
       p.description-intro
         |
-          The Network exists to connect healthcare providers and innovators as equals, 
-          so that together they can better listen to each other and to patients who are 
-          now the center of the Innovation Universe and its ultimate customer. 
+          The Network exists to connect healthcare providers and innovators as equals,
+          so that together they can better listen to each other and to patients who are
+          now the center of the Innovation Universe and its ultimate customer.
   .container.news
     - if @stories.size > 0
       h2 HIN News
       - @stories.in_groups_of(2) do |story_1, story_2|
-        .row.cards-row
+        .row
           .col-md-6
-            .card
-              h3= link_to story_1.title, story_path(story_1)
-              p= story_1.abstract
-              time= l(story_1.created_at, format: :landing_news)
+            h3= link_to story_1.title, story_path(story_1)
+            p= story_1.abstract
+            time= l(story_1.created_at, format: :landing_news)
           - if story_2
             .col-md-6
-              .card
-                h3= link_to story_2.title, story_path(story_2)
-                p= story_2.abstract
-                time= l(story_2.created_at, format: :landing_news)
+              h3= link_to story_2.title, story_path(story_2)
+              p= story_2.abstract
+              time= l(story_2.created_at, format: :landing_news)
     .row.text-center
       = link_to "Join Us", new_user_registration_path, class: "btn btn-success btn-lg join-us"
