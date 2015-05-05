@@ -1,7 +1,7 @@
 class SolutionRequestMailer < ActionMailer::Base
 
   default from: "Your Mailer <noreply@yourdomain.com>"
-  default to: "request@healthcare-innovation-network.com"
+  default to: "laura.beken@icloud.com"
 
   def new_request(request)
     @request = request
