@@ -3,6 +3,7 @@ ActiveAdmin.register Story do
   permit_params :abstract,
                 :body,
                 :created_at,
+                :image,
                 :published,
                 :status,
                 :title
