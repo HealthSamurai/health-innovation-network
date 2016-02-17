@@ -1,3 +1,5 @@
+# [DEPRECATED] this project is no longer being actively developed
+
 # Health Innovation Network
 
 ## Install
